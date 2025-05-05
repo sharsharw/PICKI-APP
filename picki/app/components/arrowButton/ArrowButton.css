@@ -1,0 +1,16 @@
+.nav-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px;
+    width: 55px;
+    height: 55px;
+    background-color: black;
+    border-radius: 999px;
+    cursor: pointer;
+  }
+  
+  .nav-button:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }

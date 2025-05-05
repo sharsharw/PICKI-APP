@@ -1,5 +1,6 @@
 'use client';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import '../arrowButton/ArrowButton.css';
 
 export default function ArrowButton({ direction = 'right', onClick, disabled = false }) {
   const Icon = direction === 'left' ? ChevronLeft : ChevronRight;

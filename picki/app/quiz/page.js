@@ -1,8 +1,7 @@
 'use client';
 import { useState } from 'react';
-import '../quiz/quiz.css'; // make sure this points to your actual CSS
-import ArrowButton from '../components/ArrowButton';
-
+import '../quiz/quiz.css';
+import ArrowButton from '../components/arrowButton/ArrowButton';
 
 export default function QuizInterface() {
   const [currentPage, setCurrentPage] = useState(0);
@@ -83,6 +82,7 @@ export default function QuizInterface() {
 
   return (
     <div className="quiz-wrapper">
+      <Navbar></Navbar>
       <div className="quiz-container">
         <h2 className="quiz-title">{quizPages[currentPage].title}</h2>
 
