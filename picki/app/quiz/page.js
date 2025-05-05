@@ -82,7 +82,6 @@ export default function QuizInterface() {
 
   return (
     <div className="quiz-wrapper">
-      <Navbar></Navbar>
       <div className="quiz-container">
         <h2 className="quiz-title">{quizPages[currentPage].title}</h2>
 
