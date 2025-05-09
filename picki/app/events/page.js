@@ -37,7 +37,7 @@ export default function EventPage() {
             <span>×</span>
           </div>
           
-          <div className="content">
+          <div className="create-event-form">
             <h1>Create Event</h1>
             <p className="subtitle">What's the occasion?</p>
             
