@@ -1,0 +1,33 @@
+.filter-chip {
+  background-color: #363636;
+  color: white;
+  border-radius: 28.5px;
+  padding: 12px 20px;
+  font-size: 21px;
+  font-weight: 500;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.filter-chip.selected {
+  background-color: #FFD147;
+  color: #391E99;
+}
+
+.filter-chip:active {
+  transform: scale(0.98);
+}
+
+
+.plus-icon {
+  margin-left: 3px;
+  display: flex;
+  align-items: center;
+  stroke-width: 3px;
+  size: 15px;
+}

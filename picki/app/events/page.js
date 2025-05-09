@@ -1,8 +1,10 @@
 'use client';
 
 import { useState } from 'react';
-import './events.css';
 import ArrowButton from '../components/arrowButton/ArrowButton';
+import TypeFilter from '../components/TypeFilter/TypeFilter';
+import './events.css';
+import { Type } from 'lucide-react';
 
 
 export default function EventPage() {
@@ -68,42 +70,39 @@ export default function EventPage() {
               />
             </div>
             
-            <div className="form-group">
+        <div className="form-group">
               <label className="form-label">Type</label>
-              <div className="type-buttons">
-                <button 
-                  className={`type-btn ${eventData.type === 'Food' ? 'active' : ''}`}
-                  onClick={() => handleTypeSelect('Food')}
-                >
-                  Food <span className="plus-icon">+</span>
-                </button>
-                <button 
-                  className={`type-btn ${eventData.type === 'Activity' ? 'active' : ''}`}
-                  onClick={() => handleTypeSelect('Activity')}
-                >
-                  Activity <span className="plus-icon">+</span>
-                </button>
-                <button 
-                  className={`type-btn ${eventData.type === 'Event' ? 'active' : ''}`}
-                  onClick={() => handleTypeSelect('Event')}
-                >
-                  Event <span className="plus-icon">+</span>
-                </button>
-                <button 
-                  className={`type-btn ${eventData.type === 'Sight Seeing' ? 'active' : ''}`}
-                  onClick={() => handleTypeSelect('Sight Seeing')}
-                >
-                  Sight Seeing <span className="plus-icon">+</span>
-                </button>
-                <button 
-                  className={`type-btn ${eventData.type === 'Other' ? 'active' : ''}`}
-                  onClick={() => handleTypeSelect('Other')}
-                >
-                  Other <span className="plus-icon">+</span>
-                </button>
+              <div className="filter-chip-container">
+                <TypeFilter 
+                  label="Food" 
+                  selected={eventData.type === 'Food'} 
+                  onClick={() => handleTypeSelect('Food')} 
+                />
+                <TypeFilter 
+                  label="Activity" 
+                  selected={eventData.type === 'Activity'} 
+                  onClick={() => handleTypeSelect('Activity')} 
+                />
+                <TypeFilter 
+                  label="Event" 
+                  selected={eventData.type === 'Event'} 
+                  onClick={() => handleTypeSelect('Event')} 
+                />
+                <TypeFilter 
+                  label="Sight Seeing" 
+                  selected={eventData.type === 'Sight Seeing'} 
+                  onClick={() => handleTypeSelect('Sight Seeing')} 
+                />
+                <TypeFilter 
+                  label="Other" 
+                  selected={eventData.type === 'Other'} 
+                  onClick={() => handleTypeSelect('Other')} 
+                />
               </div>
             </div>
           </div>
+        
+
           
            <div className="event-nav">
             <ArrowButton 
