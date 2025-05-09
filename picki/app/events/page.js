@@ -2,6 +2,8 @@
 
 import { useState } from 'react';
 import './events.css';
+import ArrowButton from '../components/arrowButton/ArrowButton';
+
 
 export default function EventPage() {
   const [eventData, setEventData] = useState({
@@ -29,14 +31,7 @@ export default function EventPage() {
     <div className="event-creator-container">
       <div className="mobile-frame">
         <div className="event-page">
-          <div className="status-bar">
-            <div className="time">11:30</div>
-            <div className="status-icons">
-              <div className="signal"></div>
-              <div className="wifi"></div>
-              <div className="battery"></div>
-            </div>
-          </div>
+         
           
           <div className="back-button">
             <span>×</span>
@@ -110,19 +105,18 @@ export default function EventPage() {
             </div>
           </div>
           
-          <div className="footer">
-            <div className="pagination">
-              <span className="dot active"></span>
-              <span className="dot"></span>
-              <span className="dot"></span>
-              <span className="dot"></span>
-            </div>
-            <button className="next-btn" onClick={handleNext}>
-              <span className="arrow">→</span>
-            </button>
+           <div className="event-nav">
+            <ArrowButton 
+                direction="left" 
+                onClick={handleNext} />
+            <ArrowButton
+                direction="right"
+                onClick={handleNext} />
+          </div>
+
           </div>
         </div>
       </div>
-    </div>
+
   );
 }
