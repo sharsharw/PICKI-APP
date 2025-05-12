@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import './SwitchButton.css'; // Import the CSS file
+import './SwitchBar.css';
 
 export default function SwitchButton() {
   const [activeTab, setActiveTab] = useState('Groups');

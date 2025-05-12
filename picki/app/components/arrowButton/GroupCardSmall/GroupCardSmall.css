@@ -1,0 +1,26 @@
+.group-card {
+    width: 169px;
+    height: 214px;
+    border-radius: 18.5px;
+    overflow: hidden;
+  }
+  
+  .group-image {
+    width: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  
+  .group-name-container {
+    background-color: #fce7f3;
+    padding: 16px;
+    text-align: center;
+  }
+  
+  .group-name {
+    color: #4338ca;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: sans-serif;
+    margin: 0;
+  }
