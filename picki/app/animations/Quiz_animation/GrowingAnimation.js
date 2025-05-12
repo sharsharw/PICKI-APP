@@ -2,10 +2,6 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-// import PinkGuy from "/pinkGuy.svg";
-// import GreenGuy from "/greenGuy.svg";
-// import YellowGuy from "/yellowGuy.svg";
-// import PurpleGuy from "/purpleGuy.svg";
 import styles from "./GrowingAnimation.module.css";
 
 const guys = [
@@ -15,17 +11,11 @@ const guys = [
   { src: "/purpleGuy.svg", className: `${styles.purple} ${styles.purpleGuy}`, alt: "Purple Guy" },
 ];
 
-// const guys = [
-//   { src: "/pinkGuy.svg", className: styles.pink, alt: "Pink Guy" },
-//   { src: "/greenGuy.svg", className: styles.green, alt: "Green Guy" },
-//   { src: "/yellowGuy.svg", className: styles.yellow, alt: "Yellow Guy" },
-//   { src: "/purpleGuy.svg", className: styles.purple, alt: "Purple Guy" },
-// ];
 
 const GrowingAnimation = () => {
   const [active, setActive] = useState(false);
   useEffect(() => {
-    const timer = setTimeout(() => setActive(true), 1000);
+    const timer = setTimeout(() => setActive(true), 500);
     return () => clearTimeout(timer);
   }, []);
 
@@ -51,28 +41,3 @@ const GrowingAnimation = () => {
 export default GrowingAnimation;
 
 
-
-
-// const GrowingAnimation = () => {
-//   const [active, setActive] = useState(false);
-
-//   useEffect(() => {
-//     const timer = setTimeout(() => setActive(true), 2000); // 2 seconds
-//     return () => clearTimeout(timer); // Optionally, you can trigger animation here if you want to use JS for more control
-//   }, []);
-
-//   return (
-//     <div className={styles.animationContainer}>
-//       <Image src="/pinkGuy.svg" alt="Pink Guy" className={`${styles.guy} ${styles.pink}`} width={100} height={100} />
-//       <Image src="/greenGuy.svg" alt="Green Guy" className={`${styles.guy} ${styles.green}`} width={100} height={100} />
-//       <Image src="/yellowGuy.svg" alt="Yellow Guy" className={`${styles.guy} ${styles.yellow}`} width={100} height={100} />
-//       <Image src="/purpleGuy.svg" alt="Purple Guy" className={`${styles.guy} ${styles.purple}`} width={100} height={100} />
-//       {/* <img src={PinkGuy} className={`${styles.guy} ${styles.pink}`} />
-//       <img src={GreenGuy} className={`${styles.guy} ${styles.green}`} />
-//       <img src={YellowGuy} className={`${styles.guy} ${styles.yellow}`} />
-//       <img src={PurpleGuy} className={`${styles.guy} ${styles.purple}`} /> */}
-//     </div>
-//   );
-// };
-
-// export default GrowingAnimation;
