@@ -3,6 +3,7 @@ import { useState } from 'react';
 import '../quiz/quiz.css';
 import ArrowButton from '../components/arrowButton/ArrowButton';
 import GroupCard from '../components/arrowButton/GroupCardSmall/GroupCardSmall';
+import { useRouter } from 'next/navigation';
 
 export default function QuizInterface() {
   const [currentPage, setCurrentPage] = useState(0);
@@ -14,6 +15,8 @@ export default function QuizInterface() {
     3: null,
     4: null,
   });
+
+  const router = useRouter();
 
   const quizPages = [
     {
@@ -74,11 +77,19 @@ export default function QuizInterface() {
   };
 
   const handleNextClick = () => {
-    if (currentPage < quizPages.length - 1) setCurrentPage(currentPage + 1);
+    if (currentPage === quizPages.length - 1) {
+      router.push('/animations');
+    } else {
+      setCurrentPage(currentPage + 1);
+    }
   };
 
   const handlePrevClick = () => {
     if (currentPage > 0) setCurrentPage(currentPage - 1);
+  };
+
+  const handleLastArrowClick = () => {
+    router.push('/animations');
   };
 
   return (
@@ -119,11 +130,11 @@ export default function QuizInterface() {
             ))}
           </div>
 
-          <ArrowButton
+            <ArrowButton
             direction="right"
             onClick={handleNextClick}
-            disabled={currentPage === quizPages.length - 1}
-          />
+          /> 
+
         </div>
       </div>
     </div>

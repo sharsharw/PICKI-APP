@@ -1,0 +1,188 @@
+
+.animationContainer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  max-width: 393px;
+  height: 100vh;
+  min-height: 812px;
+  background: #fdfaf4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+  border-radius: 24px; /* Optional: rounded corners for phone look */
+}
+
+.guyWrapper {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  /* Place in a circle using trigonometry and CSS variables */
+  transform: 
+    translate(-50%, -50%)
+    rotate(calc(var(--i) * 90deg)) 
+    translate(100px) 
+    rotate(calc(var(--i) * -90deg))
+    scale(1);
+  z-index: 1;
+  transition: none;
+}
+
+.guy {
+  width: 100px;
+  height: 100px;
+  display: block;
+}
+
+
+.purpleGuy {
+  width: 90px;
+  height: 90px;
+}
+
+.yellowGuy {
+  width: 120px;
+  height: 120px;
+}
+
+.greenGuy {
+  width: 100px;
+  height: 100px;
+}
+
+
+/* Animation: only scale and opacity, not position */
+.guyWrapper.active {
+  animation: guyGrow 4s forwards;
+}
+
+/* Animation for pink: move to center and scale up */
+.guyWrapper.pink.active {
+  z-index: 4;
+  animation: pinkToCenterGrow 4s forwards;
+}
+
+.guyWrapper.green.active,
+.guyWrapper.yellow.active,
+.guyWrapper.purple.active {
+  animation: guyGrow 4s forwards, guyFade 1s 3s forwards;
+}
+
+/* Keyframes: only scale, keep position */
+@keyframes guyGrow {
+  0% {
+    transform: 
+      translate(-50%, -50%)
+      rotate(calc(var(--i) * 90deg)) 
+      translate(100px) 
+      rotate(calc(var(--i) * -90deg))
+      scale(1);
+  }
+  75% {
+    transform: 
+      translate(-50%, -50%)
+      rotate(calc(var(--i) * 90deg)) 
+      translate(100px) 
+      rotate(calc(var(--i) * -90deg))
+      scale(2);
+  }
+  100% {
+    transform: 
+      translate(-50%, -50%)
+      rotate(calc(var(--i) * 90deg)) 
+      translate(100px) 
+      rotate(calc(var(--i) * -90deg))
+      scale(2);
+  }
+}
+
+/* Keyframes for pink: move to center and scale up */
+@keyframes pinkToCenterGrow {
+  0% {
+    /* Start in the circle */
+    transform: 
+      translate(-50%, -50%)
+      rotate(calc(var(--i) * 90deg)) 
+      translate(100px) 
+      rotate(calc(var(--i) * -90deg))
+      scale(1);
+  }
+  75% {
+    /* Still in the circle, but growing */
+    transform: 
+      translate(-50%, -50%)
+      rotate(calc(var(--i) * 90deg)) 
+      translate(100px) 
+      rotate(calc(var(--i) * -90deg))
+      scale(2);
+  }
+  100% {
+    /* Move to center and scale up */
+    transform: 
+      translate(-50%, -50%)
+      scale(10);
+  }
+}
+
+@keyframes guyFade {
+  to { opacity: 0; }
+}
+
+
+
+  /* .guy {
+    position: absolute;
+    transition: transform 4s cubic-bezier(0.77, 0, 0.175, 1), opacity 1s linear 3s;
+    opacity: 1;
+  }
+  
+  .pink {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(1);
+    z-index: 4;
+    animation: pinkGrow 4s forwards;
+  }
+  
+  .green {
+    left: 60%;
+    top: 60%;
+    transform: translate(-50%, -50%) scale(1);
+    z-index: 3;
+    animation: guyGrow 4s forwards, guyFade 1s 3s forwards;
+  }
+  
+  .yellow {
+    left: 40%;
+    top: 70%;
+    transform: translate(-50%, -50%) scale(1);
+    z-index: 2;
+    animation: guyGrow 4s forwards, guyFade 1s 3s forwards;
+  }
+  
+  .purple {
+    left: 65%;
+    top: 35%;
+    transform: translate(-50%, -50%) scale(1);
+    z-index: 1;
+    animation: guyGrow 4s forwards, guyFade 1s 3s forwards;
+  }
+  
+  @keyframes guyGrow {
+    0% { transform: translate(-50%, -50%) scale(1);}
+    75% { transform: translate(-50%, -50%) scale(2);}
+    100% { transform: translate(-50%, -50%) scale(2);}
+  }
+  
+  @keyframes pinkGrow {
+    0% { transform: translate(-50%, -50%) scale(1);}
+    75% { transform: translate(-50%, -50%) scale(2);}
+    100% { transform: translate(-50%, -50%) scale(10);}
+  }
+  
+  @keyframes guyFade {
+    to { opacity: 0; }
+  } */
