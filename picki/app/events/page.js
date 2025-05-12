@@ -4,14 +4,15 @@ import { useState } from 'react';
 import ArrowButton from '../components/arrowButton/ArrowButton';
 import TypeFilter from '../components/TypeFilter/TypeFilter';
 import './events.css';
-import { Type } from 'lucide-react';
 
 
 export default function EventPage() {
+  // Add the types array to the initial state
   const [eventData, setEventData] = useState({
     name: '',
     budget: 25, // Default value for slider
-    type: ''
+    type: '',   // Keep this for backward compatibility if needed
+    types: []   // Add this for multiple selection
   });
 
   const handleInputChange = (e) => {
@@ -20,7 +21,24 @@ export default function EventPage() {
   };
 
   const handleTypeSelect = (type) => {
-    setEventData(prev => ({ ...prev, type }));
+    setEventData(prev => {
+      // Check if the type is already selected
+      if (prev.types.includes(type)) {
+        // If selected, remove it from the array
+        return { 
+          ...prev, 
+          types: prev.types.filter(t => t !== type),
+          type: '' // Update single type for backward compatibility
+        };
+      } else {
+        // If not selected, add it to the array
+        return { 
+          ...prev, 
+          types: [...prev.types, type],
+          type: type // Update single type for backward compatibility
+        };
+      }
+    });
   };
 
   const handleNext = () => {
@@ -70,41 +88,51 @@ export default function EventPage() {
               />
             </div>
             
-        <div className="form-group">
+            <div className="form-group">
               <label className="form-label">Type</label>
               <div className="filter-chip-container">
-                <TypeFilter 
-                  label="Food" 
-                  selected={eventData.type === 'Food'} 
-                  onClick={() => handleTypeSelect('Food')} 
-                />
-                <TypeFilter 
-                  label="Activity" 
-                  selected={eventData.type === 'Activity'} 
-                  onClick={() => handleTypeSelect('Activity')} 
-                />
-                <TypeFilter 
-                  label="Event" 
-                  selected={eventData.type === 'Event'} 
-                  onClick={() => handleTypeSelect('Event')} 
-                />
-                <TypeFilter 
-                  label="Sight Seeing" 
-                  selected={eventData.type === 'Sight Seeing'} 
-                  onClick={() => handleTypeSelect('Sight Seeing')} 
-                />
-                <TypeFilter 
-                  label="Other" 
-                  selected={eventData.type === 'Other'} 
-                  onClick={() => handleTypeSelect('Other')} 
-                />
+              
+                  <TypeFilter 
+                    label="Food" 
+                    selected={eventData.types.includes('Food')}
+                    onClick={() => handleTypeSelect('Food')} 
+                    className='food-chip'
+                  />
+                  <TypeFilter 
+                    label="Activity" 
+                    selected={eventData.types.includes('Activity')}
+                    onClick={() => handleTypeSelect('Activity')} 
+                    className='activity-chip'
+                  />
+                  <TypeFilter 
+                    label="Event" 
+                    selected={eventData.types.includes('Event')}
+                    onClick={() => handleTypeSelect('Event')} 
+                    className='event-chip'
+                  />
+               
+      
+                  <TypeFilter 
+                    label="Sight Seeing" 
+                    selected={eventData.types.includes('Sight Seeing')}
+                    onClick={() => handleTypeSelect('Sight Seeing')} 
+                    className="sight-seeing-chip"
+                  />
+                  <TypeFilter 
+                    label="Other" 
+                    selected={eventData.types.includes('Other')}
+                    onClick={() => handleTypeSelect('Other')} 
+                    className="other-chip"
+                  />
+           
               </div>
             </div>
+         
           </div>
         
 
           
-           <div className="event-nav">
+          <div className="event-nav">
             <ArrowButton 
                 direction="left" 
                 onClick={handleNext} />
