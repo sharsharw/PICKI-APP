@@ -4,7 +4,9 @@ import { useState } from 'react';
 import ArrowButton from '../components/arrowButton/ArrowButton';
 import TypeFilter from '../components/TypeFilter/TypeFilter';
 import { X } from 'lucide-react';
+import BudgetSlider from '../components/budgetSlider/budgetSlider';
 import './events.css';
+
 
 
 export default function EventPage() {
@@ -13,7 +15,8 @@ export default function EventPage() {
     name: '',
     budget: 25, // Default value for slider
     type: '',   // Keep this for backward compatibility if needed
-    types: []   // Add this for multiple selection
+    types: [],   // Add this for multiple selection
+    budgetRange: [10, 50] // Default range for the slider
   });
 
   const handleInputChange = (e) => {
@@ -48,6 +51,7 @@ export default function EventPage() {
     // This would typically use router.push('/next-step') or similar
   };
 
+
   return (
     <div className="event-creator-container">
       <div className="mobile-frame">
@@ -73,24 +77,18 @@ export default function EventPage() {
               />
             </div>
             
-            <div className="form-group">
-              <label className="form-label">Budget</label>
-              <div className="budget-indicator">
-                <div className="budget-icon">$</div>
-              </div>
-              <input
-                type="range"
-                name="budget"
-                min="0"
-                max="100"
-                value={eventData.budget}
-                onChange={handleInputChange}
-                className="budget-slider"
-              />
+            <div className="budget-slider-container">
+                <label className='budget-slider-label'>Budget</label>
+                <BudgetSlider
+                    values={eventData.budgetRange}
+                    setValues={(range) =>
+                    setEventData((prev) => ({ ...prev, budgetRange: range }))
+                    }
+                />
             </div>
             
-            <div className="form-group">
-              <label className="form-label">Type</label>
+            <div className="type-filter-container">
+              <label className="type-label">Type</label>
               <div className="filter-chip-container">
               
                   <TypeFilter 
@@ -128,9 +126,8 @@ export default function EventPage() {
            
               </div>
             </div>
-         
+
           </div>
-        
 
           
           <div className="event-nav">
