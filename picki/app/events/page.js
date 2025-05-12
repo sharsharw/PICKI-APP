@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import ArrowButton from '../components/arrowButton/ArrowButton';
 import TypeFilter from '../components/TypeFilter/TypeFilter';
+import { X } from 'lucide-react';
 import './events.css';
 
 
@@ -53,15 +54,15 @@ export default function EventPage() {
         <div className="event-page">
          
           
-          <div className="back-button">
-            <span>×</span>
+          <div className="close-button-container">
+                <X size={18} strokeWidth={3} className="close-icon"/>
           </div>
           
           <div className="create-event-form">
             <h1>Create Event</h1>
             <p className="subtitle">What's the occasion?</p>
             
-            <div className="form-group">
+            <div className="event-name-input">
               <input
                 type="text"
                 name="name"
