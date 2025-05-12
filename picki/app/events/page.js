@@ -1,13 +1,18 @@
 'use client';
 
 import { useState } from 'react';
+import ArrowButton from '../components/arrowButton/ArrowButton';
+import TypeFilter from '../components/TypeFilter/TypeFilter';
 import './events.css';
 
+
 export default function EventPage() {
+  // Add the types array to the initial state
   const [eventData, setEventData] = useState({
     name: '',
     budget: 25, // Default value for slider
-    type: ''
+    type: '',   // Keep this for backward compatibility if needed
+    types: []   // Add this for multiple selection
   });
 
   const handleInputChange = (e) => {
@@ -16,7 +21,24 @@ export default function EventPage() {
   };
 
   const handleTypeSelect = (type) => {
-    setEventData(prev => ({ ...prev, type }));
+    setEventData(prev => {
+      // Check if the type is already selected
+      if (prev.types.includes(type)) {
+        // If selected, remove it from the array
+        return { 
+          ...prev, 
+          types: prev.types.filter(t => t !== type),
+          type: '' // Update single type for backward compatibility
+        };
+      } else {
+        // If not selected, add it to the array
+        return { 
+          ...prev, 
+          types: [...prev.types, type],
+          type: type // Update single type for backward compatibility
+        };
+      }
+    });
   };
 
   const handleNext = () => {
@@ -29,20 +51,13 @@ export default function EventPage() {
     <div className="event-creator-container">
       <div className="mobile-frame">
         <div className="event-page">
-          <div className="status-bar">
-            <div className="time">11:30</div>
-            <div className="status-icons">
-              <div className="signal"></div>
-              <div className="wifi"></div>
-              <div className="battery"></div>
-            </div>
-          </div>
+         
           
           <div className="back-button">
             <span>×</span>
           </div>
           
-          <div className="content">
+          <div className="create-event-form">
             <h1>Create Event</h1>
             <p className="subtitle">What's the occasion?</p>
             
@@ -75,54 +90,60 @@ export default function EventPage() {
             
             <div className="form-group">
               <label className="form-label">Type</label>
-              <div className="type-buttons">
-                <button 
-                  className={`type-btn ${eventData.type === 'Food' ? 'active' : ''}`}
-                  onClick={() => handleTypeSelect('Food')}
-                >
-                  Food <span className="plus-icon">+</span>
-                </button>
-                <button 
-                  className={`type-btn ${eventData.type === 'Activity' ? 'active' : ''}`}
-                  onClick={() => handleTypeSelect('Activity')}
-                >
-                  Activity <span className="plus-icon">+</span>
-                </button>
-                <button 
-                  className={`type-btn ${eventData.type === 'Event' ? 'active' : ''}`}
-                  onClick={() => handleTypeSelect('Event')}
-                >
-                  Event <span className="plus-icon">+</span>
-                </button>
-                <button 
-                  className={`type-btn ${eventData.type === 'Sight Seeing' ? 'active' : ''}`}
-                  onClick={() => handleTypeSelect('Sight Seeing')}
-                >
-                  Sight Seeing <span className="plus-icon">+</span>
-                </button>
-                <button 
-                  className={`type-btn ${eventData.type === 'Other' ? 'active' : ''}`}
-                  onClick={() => handleTypeSelect('Other')}
-                >
-                  Other <span className="plus-icon">+</span>
-                </button>
+              <div className="filter-chip-container">
+              
+                  <TypeFilter 
+                    label="Food" 
+                    selected={eventData.types.includes('Food')}
+                    onClick={() => handleTypeSelect('Food')} 
+                    className='food-chip'
+                  />
+                  <TypeFilter 
+                    label="Activity" 
+                    selected={eventData.types.includes('Activity')}
+                    onClick={() => handleTypeSelect('Activity')} 
+                    className='activity-chip'
+                  />
+                  <TypeFilter 
+                    label="Event" 
+                    selected={eventData.types.includes('Event')}
+                    onClick={() => handleTypeSelect('Event')} 
+                    className='event-chip'
+                  />
+               
+      
+                  <TypeFilter 
+                    label="Sight Seeing" 
+                    selected={eventData.types.includes('Sight Seeing')}
+                    onClick={() => handleTypeSelect('Sight Seeing')} 
+                    className="sight-seeing-chip"
+                  />
+                  <TypeFilter 
+                    label="Other" 
+                    selected={eventData.types.includes('Other')}
+                    onClick={() => handleTypeSelect('Other')} 
+                    className="other-chip"
+                  />
+           
               </div>
             </div>
+         
           </div>
+        
+
           
-          <div className="footer">
-            <div className="pagination">
-              <span className="dot active"></span>
-              <span className="dot"></span>
-              <span className="dot"></span>
-              <span className="dot"></span>
-            </div>
-            <button className="next-btn" onClick={handleNext}>
-              <span className="arrow">→</span>
-            </button>
+          <div className="event-nav">
+            <ArrowButton 
+                direction="left" 
+                onClick={handleNext} />
+            <ArrowButton
+                direction="right"
+                onClick={handleNext} />
+          </div>
+
           </div>
         </div>
       </div>
-    </div>
+
   );
 }
