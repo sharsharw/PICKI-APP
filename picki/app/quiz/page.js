@@ -2,8 +2,8 @@
 import { useState } from 'react';
 import '../quiz/quiz.css';
 import ArrowButton from '../components/arrowButton/ArrowButton';
-import GroupCard from '../components/arrowButton/GroupCardSmall/GroupCardSmall';
 import { useRouter } from 'next/navigation';
+import DropStackAnimation from '../quizAnimation/animationComponent/quizAnimation';
 
 export default function QuizInterface() {
   const [currentPage, setCurrentPage] = useState(0);
@@ -15,6 +15,7 @@ export default function QuizInterface() {
     3: null,
     4: null,
   });
+  const [showDropStack, setShowDropStack] = useState(false);
 
   const router = useRouter();
 
@@ -78,7 +79,7 @@ export default function QuizInterface() {
 
   const handleNextClick = () => {
     if (currentPage === quizPages.length - 1) {
-      router.push('/animations');
+      setShowDropStack(true);
     } else {
       setCurrentPage(currentPage + 1);
     }
@@ -90,7 +91,6 @@ export default function QuizInterface() {
 
   return (
     <div className="quiz-wrapper">
-      <GroupCard></GroupCard>
       <div className="quiz-container">
         <h2 className="quiz-title">{quizPages[currentPage].title}</h2>
 
@@ -126,11 +126,14 @@ export default function QuizInterface() {
             ))}
           </div>
 
+          {showDropStack ? (
+            <DropStackAnimation />
+          ) : (
             <ArrowButton
-            direction="right"
-            onClick={handleNextClick}
-          /> 
-
+              direction="right"
+              onClick={handleNextClick}
+            />
+          )}
         </div>
       </div>
     </div>
