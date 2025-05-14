@@ -88,10 +88,6 @@ export default function QuizInterface() {
     if (currentPage > 0) setCurrentPage(currentPage - 1);
   };
 
-  const handleLastArrowClick = () => {
-    router.push('/animations');
-  };
-
   return (
     <div className="quiz-wrapper">
       <GroupCard></GroupCard>
