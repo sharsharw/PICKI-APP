@@ -44,8 +44,9 @@ export default function BudgetSlider({ values, setValues }) {
               {children}
             </div>
           )}
-          renderThumb={({ props }) => (
+          renderThumb={({ props, index }) => (
             <div
+              key={index}
               {...props}
               className="budget-thumb"
             />
