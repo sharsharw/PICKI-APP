@@ -5,11 +5,24 @@ import Link from 'next/link';
 import ArrowButton from '../../components/arrowButton/ArrowButton';
 import { X } from 'lucide-react';
 import CustomDatePicker from '../../components/datePicker/datePicker';
+import SeparatedTimePicker from '../../components/timePicker/timePicker'; // Import the new component
 import '../events.css';
 
 export default function EventTimePage() {
   const [eventDate, setEventDate] = useState(new Date());
-  const [eventDateWithTime, setEventDateWithTime] = useState(new Date());
+  const [eventTime, setEventTime] = useState(new Date()); // Time state
+
+  // Optional: Function to combine date and time
+  const getCombinedDateTime = () => {
+    const combinedDate = new Date(eventDate);
+    combinedDate.setHours(
+      eventTime.getHours(),
+      eventTime.getMinutes(),
+      0,
+      0
+    );
+    return combinedDate;
+  };
 
   return (
     <div className="event-creator-container bg-gray-100 p-8 rounded-lg shadow-xl">
@@ -23,15 +36,23 @@ export default function EventTimePage() {
             <h1 className="text-2xl font-bold text-gray-800">Event Time</h1>
             <p className="subtitle text-sm text-gray-500 mb-6">Pick when your event will happen.</p>
 
-            {/* Date Only Picker */}
+            {/* Date Picker */}
             <div className="mb-6">
               <CustomDatePicker 
                 selectedDate={eventDate}
                 onChange={setEventDate}
-                label="Select the date"
+                label="Select the date of the event"
               />
             </div>
 
+            {/* Time Picker (Separated) */}
+            <div className="mb-6">
+              <SeparatedTimePicker
+                selectedTime={eventTime}
+                onChange={setEventTime}
+                label="Select the time of the event"
+              />
+            </div>
           </div>
 
           {/* Navigation Buttons */}
