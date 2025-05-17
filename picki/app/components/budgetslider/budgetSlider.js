@@ -20,7 +20,7 @@ export default function BudgetSlider({ values, setValues }) {
           step={STEP}
           min={MIN}
           max={MAX}
-          onChange={setValues}  // Ensure setValues is updating state correctly
+          onChange={setValues}  
           renderTrack={({ props, children }) => (
             <div
               {...props}
