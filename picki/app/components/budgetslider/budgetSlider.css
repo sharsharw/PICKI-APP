@@ -1,0 +1,67 @@
+.budget-slider-container {
+  margin: 15px 0;
+}
+
+.budget-slider-label {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 10px;
+  display: block;
+  color: #363636;
+}
+
+.budget-slider-wrapper {
+  position: relative;
+  padding: 20px 0;
+  margin-top: 50px;
+}
+
+.budget-tooltip {
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #D6D1EA;
+  color: #391E99;
+  padding: 5px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.budget-tooltip::after {
+  content: "";
+  position: absolute;
+  bottom: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 12px;
+  border-style: solid;
+  border-color: #D6D1EA transparent transparent transparent;
+}
+
+.budget-track {
+  height: 11px;
+  width: 349px;
+  background-color: #e0d5ec; /* light purple for unselected part */
+  border-radius: 13px;
+  position: relative;
+}
+
+.budget-thumb {
+  height: 24px;
+  width: 24px;
+  background-color: #3b1c85;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.budget-range-labels {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 400;
+  color: #3b1c85;
+  margin-top: 15px;
+  font-size: 14px;
+}
