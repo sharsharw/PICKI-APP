@@ -5,39 +5,34 @@ import Link from 'next/link';
 import ArrowButton from '../../components/arrowButton/ArrowButton';
 import { X } from 'lucide-react';
 import CustomDatePicker from '../../components/datePicker/datePicker';
-import SeparatedTimePicker from '../../components/timePicker/timePicker'; // Import the new component
+import SeparatedTimePicker from '../../components/timePicker/timePicker'; 
 import '../events.css';
 
 export default function EventTimePage() {
+  // State for date and time
   const [eventDate, setEventDate] = useState(new Date());
-  const [eventTime, setEventTime] = useState(new Date()); // Time state
+  const [eventTime, setEventTime] = useState(new Date());
 
-  // Optional: Function to combine date and time
+  // Utility function to combine date and time
   const getCombinedDateTime = () => {
     const combinedDate = new Date(eventDate);
-    combinedDate.setHours(
-      eventTime.getHours(),
-      eventTime.getMinutes(),
-      0,
-      0
-    );
+    combinedDate.setHours(eventTime.getHours(), eventTime.getMinutes(), 0, 0);
     return combinedDate;
   };
 
   return (
-    <div className="event-creator-container bg-gray-100 p-8 rounded-lg shadow-xl">
-      <div className="mobile-frame max-w-lg mx-auto">
-        <div className="event-page bg-white rounded-lg shadow-lg p-6">
-          <div className="close-button-container flex justify-end">
-            <X size={18} strokeWidth={3} className="close-icon cursor-pointer text-gray-600" />
+    <div className="event-creator-container">
+      <div className="mobile-frame">
+        <div className="event-page">
+          <div className="close-button-container">
+            <X size={18} strokeWidth={3} className="close-icon" />
           </div>
           
           <div className="create-event-form">
-            <h1 className="text-2xl font-bold text-gray-800">Event Time</h1>
-            <p className="subtitle text-sm text-gray-500 mb-6">Pick when your event will happen.</p>
+            <h1>Event Time</h1>
+            <p className="subtitle">Pick when your event will happen.</p>
 
-            {/* Date Picker */}
-            <div className="mb-6">
+            <div className="date-picker-container">
               <CustomDatePicker 
                 selectedDate={eventDate}
                 onChange={setEventDate}
@@ -45,8 +40,7 @@ export default function EventTimePage() {
               />
             </div>
 
-            {/* Time Picker (Separated) */}
-            <div className="mb-6">
+            <div className="time-picker-container">
               <SeparatedTimePicker
                 selectedTime={eventTime}
                 onChange={setEventTime}
@@ -54,14 +48,13 @@ export default function EventTimePage() {
               />
             </div>
           </div>
-
-          {/* Navigation Buttons */}
-          <div className="event-nav mt-4 flex justify-between">
+          
+          <div className="event-nav">
             <Link href='/events'>
-              <ArrowButton direction="left" className="bg-indigo-500 text-white p-2 rounded-full" />
+              <ArrowButton direction="left" />
             </Link>
-            <Link href="">
-              <ArrowButton direction="right" className="bg-indigo-500 text-white p-2 rounded-full" />
+            <Link href="/events/rsvp">
+              <ArrowButton direction="right" />
             </Link>
           </div>
         </div>

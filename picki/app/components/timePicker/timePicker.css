@@ -1,21 +1,20 @@
-/* separatedTimePicker.css - Simplified Animations, Bold Design */
 :root {
-  /* Colors - matching your datePicker.css with enhanced boldness */
-  --time-primary-color: #391E99;       /* Primary accent color */
-  --time-text-color: #B1B1B1;          /* Main text color */
-  --time-label-color: #363636;         /* Label text color */
-  --time-border-color: #391E99;        /* Border color */
-  --time-background: #ffffff;          /* Background color */
-  --time-selected-color: #391E99;      /* Selected time background */
-  --time-selected-text: #ffffff;       /* Selected time text */
-  --time-hover-bg: #D6D1EA;            /* Hover background */
+  /* Colors */
+  --time-primary-color: #391E99;       
+  --time-text-color: #B1B1B1;          
+  --time-label-color: #363636;         
+  --time-border-color: #391E99;        
+  --time-background: #ffffff;          
+  --time-selected-color: #391E99;      
+  --time-selected-text: #ffffff;       
+  --time-hover-bg: #D6D1EA;            
   
   /* Sizes and Spacing */
-  --time-border-radius: 13.5px;        /* Border radius for input */
-  --time-font-size: 16px;              /* Base font size */
+  --time-border-radius: 13.5px;        
+  --time-font-size: 16px;              
 }
 
-/* Base Container Styles */
+/* Container and Basic Elements */
 .separated-time-picker {
   width: 100%;
   margin-bottom: 20px;
@@ -23,16 +22,25 @@
   position: relative;
 }
 
-/* Label Styles */
 .time-label {
   display: block;
   font-size: var(--time-font-size);
   font-weight: 600;
   margin-bottom: 12px;
+  margin-top: 50px;
   color: var(--time-label-color);
 }
 
-/* Time Selectors Container */
+.time-display {
+  font-size: 14px;
+  color: var(--time-primary-color);
+  font-weight: 500;
+  text-align: center;
+  padding: 10px;
+  margin-bottom: 50px;
+}
+
+/* Layout and Containers */
 .time-selectors-container {
   display: flex;
   justify-content: center;
@@ -41,20 +49,18 @@
   margin-bottom: 16px;
 }
 
-/* Individual Time Selector */
 .time-selector {
   position: relative;
-  margin: 0 5px;
-  flex-grow: 1;
+  margin: 0 9px;
   max-width: 110px;
 }
 
-/* Selector Buttons - Bold Design */
+/* Buttons and Interactive Elements */
 .time-selector-button {
-  min-width: 90px;
-  padding: 12px 14px;
+  min-width: 80px;
+  padding: 12px 16px;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 500;
   background-color: var(--time-background);
   border: 2px solid var(--time-border-color);
   border-radius: var(--time-border-radius);
@@ -67,36 +73,29 @@
   height: 48px;
 }
 
-.time-selector-button:hover {
-  border-color: var(--time-primary-color);
-  background-color: rgba(214, 209, 234, 0.2);
-}
-
 .time-selector-button:focus {
   outline: none;
   border-color: var(--time-primary-color);
-  box-shadow: 0 0 0 4px rgba(57, 30, 153, 0.2);
+  box-shadow: 0 0 0 2px #D6D1EA;
 }
 
-/* Time separator ":" - Bold */
 .time-separator {
   font-size: 24px;
   font-weight: 700;
   color: var(--time-primary-color);
-  margin: 0 5px;
-  padding-bottom: 5px; /* Visual alignment */
+  margin: 0 3px;
+  padding-bottom: 5px;
 }
 
-/* AM/PM Selector */
 .ampm-selector .time-selector-button {
   min-width: 70px;
   max-width: 90px;
 }
 
-/* Dropdown Arrow - Simplified */
+/* Dropdown Elements */
 .dropdown-arrow {
   transition: transform 0.2s ease;
-  color: var(--time-primary-color);
+  color: #D6D1EA;
   stroke-width: 3;
   width: 14px;
   height: 14px;
@@ -104,9 +103,9 @@
 
 .dropdown-arrow.open {
   transform: rotate(180deg);
+  color: var(--time-primary-color);
 }
 
-/* Options Dropdown - Simplified Animation */
 .options-dropdown {
   position: absolute;
   top: calc(100% + 6px);
@@ -117,15 +116,14 @@
   background-color: var(--time-background);
   border: 2px solid var(--time-border-color);
   border-radius: var(--time-border-radius);
-  box-shadow: 0 8px 16px rgba(57, 30, 153, 0.2);
   z-index: 1000;
-  /* Simplified fade-in animation */
   animation: simpleDropdown 0.15s ease-out forwards;
-  padding: 6px 0;
+  padding: 6px 0 6px 0;
+  padding-right: 6px;
 }
 
 .minute-dropdown {
-  max-height: 250px;
+  max-height: 220px;
 }
 
 .ampm-dropdown {
@@ -133,18 +131,14 @@
 }
 
 @keyframes simpleDropdown {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
-/* Individual Time Option - Bold but Simple */
+/* Time Options */
 .time-option {
   padding: 10px 14px;
-  font-size: 15px;
+  font-size: 14px; 
   font-weight: 500;
   color: var(--time-primary-color);
   cursor: pointer;
@@ -164,19 +158,6 @@
   font-weight: 700;
 }
 
-/* Time Display */
-.time-display {
-  margin-top: 12px;
-  font-size: 16px;
-  color: var(--time-primary-color);
-  font-weight: 700;
-  text-align: center;
-  background-color: rgba(214, 209, 234, 0.3);
-  padding: 10px;
-  border-radius: var(--time-border-radius);
-  border: 1px solid rgba(57, 30, 153, 0.1);
-}
-
 /* Scrollbar Styling */
 .options-dropdown::-webkit-scrollbar {
   width: 6px;
@@ -185,30 +166,15 @@
 .options-dropdown::-webkit-scrollbar-track {
   background: #f1f1f1;
   border-radius: 10px;
+  margin: 6px 0;
 }
 
 .options-dropdown::-webkit-scrollbar-thumb {
   background: var(--time-primary-color);
   border-radius: 10px;
+  background-clip: padding-box;
 }
 
 .options-dropdown::-webkit-scrollbar-thumb:hover {
   background: #2e1878;
-}
-
-/* Mobile Optimization */
-@media (max-width: 480px) {
-  .time-selector-button {
-    min-width: 70px;
-    padding: 10px 8px;
-  }
-  
-  .ampm-selector .time-selector-button {
-    min-width: 60px;
-  }
-  
-  .time-separator {
-    font-size: 20px;
-    margin: 0 2px;
-  }
 }

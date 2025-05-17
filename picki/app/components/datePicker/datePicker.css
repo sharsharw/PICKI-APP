@@ -1,4 +1,3 @@
-/* Variables */
 :root {
   /* Colors */
   --date-primary-color: #391E99;
@@ -26,7 +25,7 @@
   font-family: "inter", sans-serif;
 }
 
-/* Label and Display - PRESERVED EXACTLY AS ORIGINAL */
+/* Label and Display */
 .date-label {
   display: block;
   font-size: var(--date-font-size);
