@@ -3,7 +3,7 @@
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: white; /* or #f9f9f9 or whatever your site uses */
+    background-color: #FFFAF1; /* or #f9f9f9 or whatever your site uses */
   }
 .groups-page {
     width: 393px;
