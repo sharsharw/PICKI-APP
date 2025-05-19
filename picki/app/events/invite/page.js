@@ -14,7 +14,6 @@ export default function EventInvitePage() {
   const [selectedFriends, setSelectedFriends] = useState([]);
   const searchInputRef = useRef(null);
 
-  // Sample data - replace with your actual data
   const groups = [
     { id: 1, name: 'Boba Babies', image: '/images/bobababies.png', color: '#FFE0EE' },
     { id: 2, name: 'Always Lost', image: '/images/alwayslost.png', color: '#D6D1EA' },
@@ -50,7 +49,6 @@ export default function EventInvitePage() {
         ? selectedGroups.filter(groupId => groupId !== id)
         : [...selectedGroups, id];
       setSelectedGroups(newSelected);
-      // Don't close overlay when selecting a group - will use the button instead
     } else {
       setSelectedFriends(
         selectedFriends.includes(id)
@@ -59,11 +57,9 @@ export default function EventInvitePage() {
       );
     }
   };
-  
+
   // Add selected groups and close overlay
   const addSelectedGroups = () => {
-    // This function now just closes the overlay
-    // The groups are already selected in the state
     setShowGroupsOverlay(false);
   };
 
@@ -77,7 +73,6 @@ export default function EventInvitePage() {
   return (
     <div className="event-creator-container">
       <div className="mobile-frame">
-        {/* Main event page content */}
         <div className="event-page">
           <div className="close-button-container">
             <X size={18} strokeWidth={3} className="close-icon" />
@@ -113,8 +108,7 @@ export default function EventInvitePage() {
                       </div>
                     </div>
                   ))}
-                  
-                  {/* "Add" button always visible */}
+                
                   <div 
                     className="add-group-card"
                     onClick={() => toggleOverlay('groups')}
@@ -138,7 +132,6 @@ export default function EventInvitePage() {
                   <Plus size={16} strokeWidth={3} />
                 </div>
 
-                {/* Display selected friends */}
                 {selectedFriends.length > 0 && (
                   <div className="selected-friends">
                     {getSelected('friends').map(friend => (
@@ -178,7 +171,7 @@ export default function EventInvitePage() {
             <Link href='/events/cover'>
               <ArrowButton direction="left" />
             </Link>
-            <Link href="/events/confirmation">
+            <Link href="/events/confirm">
               <ArrowButton direction="right" />
             </Link>
           </div>
