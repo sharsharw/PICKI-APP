@@ -114,7 +114,7 @@ export default function EventCoverImagePage() {
             <Link href='/events/rsvp'>
               <ArrowButton direction="left" />
             </Link>
-            <Link href="/events/confirmation">
+            <Link href="/events/invite">
               <ArrowButton direction="right" />
             </Link>
           </div>
