@@ -42,7 +42,7 @@ export default function EventRSVPPage() {
             <Link href='/events/time'>
               <ArrowButton direction="left" />
             </Link>
-            <Link href=''>
+            <Link href='/events/cover'>
               <ArrowButton direction="right" />
             </Link>
           </div>

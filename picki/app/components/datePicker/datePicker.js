@@ -20,7 +20,6 @@ const CustomDatePicker = ({
     }
   };
 
-  // Format date for display
   const formatDate = (date) => {
     if (!date) return '--';
     return new Intl.DateTimeFormat('en-US', {
@@ -41,8 +40,7 @@ const CustomDatePicker = ({
           dateFormat="MMMM d, yyyy"
           placeholderText={placeholder}
           className="date-input"
-          shouldCloseOnSelect={false} // This prevents closing when selecting a date
-          // Add this prop to ensure it closes when clicking outside
+          shouldCloseOnSelect={false}
           onClickOutside={() => document.activeElement.blur()}
         />
       </div>
