@@ -1,14 +1,14 @@
 'use client';
 
 import React, { useState, useRef } from 'react';
-import { useRouter } from 'next/navigation'; // Import useRouter for programmatic navigation
+import { useRouter } from 'next/navigation'; 
 import { X, Plus, Search } from 'lucide-react';
-import EventNav from '../../components/eventNav/eventNav'; // Import the new EventNav component
+import EventNav from '../../components/eventNav/eventNav'; 
 import '../events.css';
 import './invite.css';
 
 export default function EventInvitePage() {
-  const router = useRouter(); // Initialize the router for navigation
+  const router = useRouter();
   const [showGroupsOverlay, setShowGroupsOverlay] = useState(false);
   const [showFriendsOverlay, setShowFriendsOverlay] = useState(false);
   const [selectedGroups, setSelectedGroups] = useState([]);
@@ -32,9 +32,7 @@ export default function EventInvitePage() {
     { id: 7, username: '@njzzzzz', profilePic: '/images/njzzzzz.png', color: '#FFF3CF' },
   ];
   
-  // Handle step changes in the EventNav
   const handleStepChange = (step) => {
-    // Navigate based on the step
     switch(step) {
       case 1:
         router.push('/events');
@@ -49,7 +47,6 @@ export default function EventInvitePage() {
         router.push('/events/cover');
         break;
       case 5:
-        // Current page - no navigation needed
         break;
       case 6:
         router.push('/events/confirm');
@@ -86,12 +83,10 @@ export default function EventInvitePage() {
     }
   };
 
-  // Add selected groups and close overlay
   const addSelectedGroups = () => {
     setShowGroupsOverlay(false);
   };
 
-  // Get selected items
   const getSelected = (type) => {
     return type === 'groups'
       ? groups.filter(group => selectedGroups.includes(group.id))
@@ -194,13 +189,12 @@ export default function EventInvitePage() {
               </div>
             </div>
           </div>
-          
-          {/* Replace the previous event-nav with the new EventNav component */}
+    
           {!showGroupsOverlay && !showFriendsOverlay && (
             <div className="event-nav-bottom-bar">
               <EventNav 
                 totalSteps={6} 
-                currentStep={5} // This is step 5 in the flow
+                currentStep={5} 
                 onStepChange={handleStepChange} 
               />
               <div className="event-nav-line"></div>

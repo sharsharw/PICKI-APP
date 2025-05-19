@@ -1,14 +1,14 @@
 'use client';
 
 import React, { useState, useRef } from 'react';
-import { useRouter } from 'next/navigation'; // Import useRouter for programmatic navigation
+import { useRouter } from 'next/navigation'; 
 import { X, Plus, Pencil } from 'lucide-react';
-import EventNav from '../../components/eventNav/eventNav'; // Import the new EventNav component
+import EventNav from '../../components/eventNav/eventNav'; 
 import '../events.css';
 import './cover.css';
 
 export default function EventCoverImagePage() {
-  const router = useRouter(); // Initialize the router for navigation
+  const router = useRouter(); 
   const [coverImage, setCoverImage] = useState(null);
   const [coverColor, setCoverColor] = useState('#391E99'); 
   const [showOverlay, setShowOverlay] = useState(false);
@@ -28,9 +28,7 @@ export default function EventCoverImagePage() {
     { color: '#FFD147', name: 'yellow', textColor: '#391E99' } 
   ];
   
-  // Handle step changes in the EventNav
   const handleStepChange = (step) => {
-    // Navigate based on the step
     switch(step) {
       case 1:
         router.push('/events');
@@ -42,13 +40,13 @@ export default function EventCoverImagePage() {
         router.push('/events/rsvp');
         break;
       case 4:
-        // Current page - no navigation needed
+        // Current page 
         break;
       case 5:
         router.push('/events/invite');
         break;
       case 6:
-        router.push('/events/confirmation');
+        router.push('/events/confirm');
         break;
       default:
         break;
@@ -138,12 +136,11 @@ export default function EventCoverImagePage() {
             <div className="preview-label">Preview</div>
           </div>
           
-          {/* Replace the previous event-nav with the new EventNav component */}
           {!showOverlay && (
             <div className="event-nav-bottom-bar">
               <EventNav 
                 totalSteps={6} 
-                currentStep={4} // This is step 4 in the flow
+                currentStep={4}
                 onStepChange={handleStepChange} 
               />
               <div className="event-nav-line"></div>

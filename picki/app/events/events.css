@@ -121,13 +121,13 @@ h1 {
 
 .event-nav-bottom-bar {
   position: fixed;
-  bottom: 50px; /* Fixed distance from bottom on all pages */
+  bottom: 50px; 
   left: 50%;
   transform: translateX(-50%);
   width: 100%;
-  max-width: 393px; /* Match mobile frame width */
+  max-width: 393px; 
   z-index: 10;
-  padding: 0 15px; /* Add horizontal padding to prevent edges touching */
+  padding: 0 15px;
   box-sizing: border-box;
 }
 
@@ -141,17 +141,15 @@ h1 {
 .invite-slide-overlay,
 .friends-slide-overlay,
 .slide-up-overlay {
-  z-index: 20; /* Higher than nav bar */
+  z-index: 20;
 }
 
-/* Make all bottom content (like confirm buttons) have proper spacing */
 .confirm-button,
 .save-changes-button,
 .add-groups-button {
-  margin-bottom: 40px; /* Ensure buttons don't overlap with nav */
+  margin-bottom: 40px; 
 }
 
-/* Form content should have proper bottom spacing */
 .create-event-form {
   margin-bottom: 20px;
 }
