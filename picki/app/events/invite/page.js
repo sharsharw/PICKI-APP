@@ -32,6 +32,10 @@ export default function EventInvitePage() {
     { id: 7, username: '@njzzzzz', profilePic: '/images/njzzzzz.png', color: '#FFF3CF' },
   ];
   
+const handleClose = () => {
+  router.push('/events/home');
+};
+
   const handleStepChange = (step) => {
     switch(step) {
       case 1:
@@ -97,8 +101,14 @@ export default function EventInvitePage() {
     <div className="event-creator-container">
       <div className="mobile-frame">
         <div className="event-page">
-          <div className="close-button-container">
-            <X size={18} strokeWidth={3} className="close-icon" />
+           <div className="close-button-container">
+            <X 
+              size={18} 
+              strokeWidth={3} 
+              className="close-icon" 
+              onClick={handleClose} 
+              style={{ cursor: 'pointer' }}
+            />
           </div>
           
           <div className="create-event-form">
@@ -197,7 +207,6 @@ export default function EventInvitePage() {
                 currentStep={5} 
                 onStepChange={handleStepChange} 
               />
-              <div className="event-nav-line"></div>
             </div>
           )}
         </div>

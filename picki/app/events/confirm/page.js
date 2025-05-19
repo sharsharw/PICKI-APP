@@ -27,6 +27,10 @@ export default function EventConfirmationPage() {
       { id: 4, profilePic: '/images/user4.png' },
     ]
   };
+
+  const handleClose = () => {
+  router.push('/events/home');
+};
   
   // Handle step changes in the EventNav
   const handleStepChange = (step) => {
@@ -63,7 +67,13 @@ export default function EventConfirmationPage() {
         <div className="event-page">
           <div className="confirmation-header">
            <div className="confirm-close-button">
-            <X size={18} strokeWidth={3} className="close-icon" />
+            <X 
+              size={18} 
+              strokeWidth={3} 
+              className="close-icon" 
+              onClick={handleClose}
+              style={{ cursor: 'pointer' }} 
+            />
           </div>
           </div>
           <div className="confirmation-content">

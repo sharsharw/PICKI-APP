@@ -28,6 +28,10 @@ export default function EventCoverImagePage() {
     { color: '#FFD147', name: 'yellow', textColor: '#391E99' } 
   ];
   
+  const handleClose = () => {
+  router.push('/events/home');
+};
+
   const handleStepChange = (step) => {
     switch(step) {
       case 1:
@@ -96,10 +100,15 @@ export default function EventCoverImagePage() {
     <div className="event-creator-container">
       <div className="mobile-frame">
         <div className="event-page">
-          <div className="close-button-container">
-            <X size={18} strokeWidth={3} className="close-icon" />
+       <div className="close-button-container">
+            <X 
+              size={18} 
+              strokeWidth={3} 
+              className="close-icon" 
+              onClick={handleClose} 
+              style={{ cursor: 'pointer' }} 
+            />
           </div>
-          
           <div className="create-event-form">
             <h1>Add an image</h1>
             <p className="subtitle">
@@ -143,7 +152,6 @@ export default function EventCoverImagePage() {
                 currentStep={4}
                 onStepChange={handleStepChange} 
               />
-              <div className="event-nav-line"></div>
             </div>
           )}
         </div>

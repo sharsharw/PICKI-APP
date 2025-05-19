@@ -18,6 +18,10 @@ export default function EventPage() {
     budgetRange: [10, 50],
   });
 
+    const handleClose = () => {
+    router.push('/events/home');
+  };
+
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setEventData((prev) => ({ ...prev, [name]: value }));
@@ -73,7 +77,13 @@ export default function EventPage() {
       <div className="mobile-frame">
         <div className="event-page">
           <div className="close-button-container">
-            <X size={18} strokeWidth={3} className="close-icon" />
+            <X 
+              size={18} 
+              strokeWidth={3} 
+              className="close-icon" 
+              onClick={handleClose} // Add onClick handler here
+              style={{ cursor: 'pointer' }} // Add pointer cursor for better UX
+            />
           </div>
 
           <div className="create-event-form">

@@ -18,6 +18,10 @@ export default function EventRSVPPage() {
     '--date-hover-bg': 'rgba(39, 135, 0, 0.2)',
   };
   
+ const handleClose = () => {
+    router.push('/events/home');
+  };
+
   const handleStepChange = (step) => {
     switch(step) {
       case 1:
@@ -47,8 +51,14 @@ export default function EventRSVPPage() {
     <div className="event-creator-container">
       <div className="mobile-frame">
         <div className="event-page">
-          <div className="close-button-container">
-            <X size={18} strokeWidth={3} className="close-icon" />
+       <div className="close-button-container">
+            <X 
+              size={18} 
+              strokeWidth={3} 
+              className="close-icon" 
+              onClick={handleClose} 
+              style={{ cursor: 'pointer' }} 
+            />
           </div>
           
           <div className="create-event-form">
@@ -70,7 +80,6 @@ export default function EventRSVPPage() {
               currentStep={3} 
               onStepChange={handleStepChange} 
             />
-            <div className="event-nav-line"></div>
           </div>
         </div>
       </div>

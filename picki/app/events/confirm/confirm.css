@@ -130,3 +130,7 @@
 .confirm-button:hover {
   background-color: #222222;
 }
+
+.confirm-close-button {
+  padding-bottom: 0px;
+}

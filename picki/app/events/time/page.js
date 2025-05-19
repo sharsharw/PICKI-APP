@@ -22,6 +22,9 @@ export default function EventTimePage() {
     return combinedDate;
   };
   
+   const handleClose = () => {
+    router.push('/events/home');
+  };
   
   const handleStepChange = (step) => {
     switch(step) {
@@ -31,16 +34,16 @@ export default function EventTimePage() {
       case 2:
         break;
       case 3:
-        router.push('/events/cover');
+        router.push('/events/rsvp');
         break;
       case 4:
-        router.push('/events/invite');
+        router.push('/events/cover');
         break;
       case 5:
-        router.push('/events/confirmation');
+        router.push('/events/invite');
         break;
       case 6:
-        router.push('/events/success');
+        router.push('/events/confirm');
         break;
       default:
         break;
@@ -51,10 +54,15 @@ export default function EventTimePage() {
     <div className="event-creator-container">
       <div className="mobile-frame">
         <div className="event-page">
-          <div className="close-button-container">
-            <X size={18} strokeWidth={3} className="close-icon" />
+           <div className="close-button-container">
+            <X 
+              size={18} 
+              strokeWidth={3} 
+              className="close-icon" 
+              onClick={handleClose} // Add onClick handler here
+              style={{ cursor: 'pointer' }} // Add pointer cursor for better UX
+            />
           </div>
-          
           <div className="create-event-form">
             <h1>Event Time</h1>
             <p className="subtitle">Pick when your event will happen.</p>
@@ -82,7 +90,6 @@ export default function EventTimePage() {
               currentStep={2} 
               onStepChange={handleStepChange} 
             />
-            <div className="event-nav-line"></div>
           </div>
         </div>
       </div>
