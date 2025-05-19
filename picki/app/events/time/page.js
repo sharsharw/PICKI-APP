@@ -1,23 +1,50 @@
 'use client';
 
 import React, { useState } from 'react';
-import Link from 'next/link';
-import ArrowButton from '../../components/arrowButton/ArrowButton';
+import { useRouter } from 'next/navigation'; 
 import { X } from 'lucide-react';
 import CustomDatePicker from '../../components/datePicker/datePicker';
 import SeparatedTimePicker from '../../components/timePicker/timePicker'; 
+import EventNav from '../../components/eventNav/eventNav'; 
 import '../events.css';
 
 export default function EventTimePage() {
-  // State for date and time
+  const router = useRouter(); 
+  
+  
   const [eventDate, setEventDate] = useState(new Date());
   const [eventTime, setEventTime] = useState(new Date());
 
-  // Utility function to combine date and time
+  
   const getCombinedDateTime = () => {
     const combinedDate = new Date(eventDate);
     combinedDate.setHours(eventTime.getHours(), eventTime.getMinutes(), 0, 0);
     return combinedDate;
+  };
+  
+  
+  const handleStepChange = (step) => {
+    switch(step) {
+      case 1:
+        router.push('/events');
+        break;
+      case 2:
+        break;
+      case 3:
+        router.push('/events/cover');
+        break;
+      case 4:
+        router.push('/events/invite');
+        break;
+      case 5:
+        router.push('/events/confirmation');
+        break;
+      case 6:
+        router.push('/events/success');
+        break;
+      default:
+        break;
+    }
   };
 
   return (
@@ -49,13 +76,13 @@ export default function EventTimePage() {
             </div>
           </div>
           
-          <div className="event-nav">
-            <Link href='/events'>
-              <ArrowButton direction="left" />
-            </Link>
-            <Link href="/events/rsvp">
-              <ArrowButton direction="right" />
-            </Link>
+          <div className="event-nav-bottom-bar">
+            <EventNav 
+              totalSteps={6} 
+              currentStep={2} 
+              onStepChange={handleStepChange} 
+            />
+            <div className="event-nav-line"></div>
           </div>
         </div>
       </div>

@@ -1,13 +1,14 @@
 'use client';
 
 import React, { useState } from 'react';
-import Link from 'next/link';
-import ArrowButton from '../../components/arrowButton/ArrowButton';
+import { useRouter } from 'next/navigation'; 
 import { X } from 'lucide-react';
 import CustomDatePicker from '../../components/datePicker/datePicker';
+import EventNav from '../../components/eventNav/eventNav'; 
 import '../events.css';
 
 export default function EventRSVPPage() {
+  const router = useRouter(); 
   const [eventDate, setEventDate] = useState(new Date());
 
   const datePickerStyle = {
@@ -15,6 +16,31 @@ export default function EventRSVPPage() {
     '--date-border-color': '#278700',
     '--date-selected-color': '#278700',
     '--date-hover-bg': 'rgba(39, 135, 0, 0.2)',
+  };
+  
+  const handleStepChange = (step) => {
+    switch(step) {
+      case 1:
+        router.push('/events');
+        break;
+      case 2:
+        router.push('/events/time');
+        break;
+      case 3:
+        // Current page
+        break;
+      case 4:
+        router.push('/events/cover');
+        break;
+      case 5:
+        router.push('/events/invite');
+        break;
+      case 6:
+        router.push('/events/confirm');
+        break;
+      default:
+        break;
+    }
   };
 
   return (
@@ -38,13 +64,13 @@ export default function EventRSVPPage() {
             </div>
           </div>
           
-          <div className="event-nav">
-            <Link href='/events/time'>
-              <ArrowButton direction="left" />
-            </Link>
-            <Link href='/events/cover'>
-              <ArrowButton direction="right" />
-            </Link>
+          <div className="event-nav-bottom-bar">
+            <EventNav 
+              totalSteps={6} 
+              currentStep={3} 
+              onStepChange={handleStepChange} 
+            />
+            <div className="event-nav-line"></div>
           </div>
         </div>
       </div>

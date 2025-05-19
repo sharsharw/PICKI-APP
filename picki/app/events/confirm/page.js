@@ -1,12 +1,14 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
-import { ChevronLeft } from 'lucide-react';
+import { useRouter } from 'next/navigation'; 
+import { X } from 'lucide-react';
+import EventNav from '../../components/eventNav/eventNav'; 
 import '../events.css';
 import './confirm.css';
 
 export default function EventConfirmationPage() {
+  const router = useRouter(); 
   const eventData = {
     title: "Girl's Night",
     type: "Food",
@@ -25,23 +27,49 @@ export default function EventConfirmationPage() {
       { id: 4, profilePic: '/images/user4.png' },
     ]
   };
+  
+  // Handle step changes in the EventNav
+  const handleStepChange = (step) => {
+    switch(step) {
+      case 1:
+        router.push('/events');
+        break;
+      case 2:
+        router.push('/events/time');
+        break;
+      case 3:
+        router.push('/events/rsvp');
+        break;
+      case 4:
+        router.push('/events/cover');
+        break;
+      case 5:
+        router.push('/events/invite');
+        break;
+      case 6:
+        break;
+      default:
+        break;
+    }
+  };
+  
+  const handleConfirm = () => {
+    router.push('/events/success');
+  };
 
   return (
-      <div className="event-creator-container">
+    <div className="event-creator-container">
       <div className="mobile-frame">
         <div className="event-page">
-          {/* Header */}
           <div className="confirmation-header">
-            <Link href="/events/invite" className="back-button">
-              <ChevronLeft size={20} strokeWidth={3} />
-            </Link>
+           <div className="confirm-close-button">
+            <X size={18} strokeWidth={3} className="close-icon" />
+          </div>
           </div>
           <div className="confirmation-content">
             <h1 className="confirmation-title">Confirm</h1>
             <p className="confirmation-subtitle">Review your choices!</p>
-    
-            
-            {/* Event Details */}
+     
             <div className="event-details">
               <h2 className="event-title">{eventData.title}</h2>
               
@@ -60,8 +88,7 @@ export default function EventConfirmationPage() {
                 <span className="event-info-value">{eventData.rsvpDeadline}</span>
               </div>
             </div>
-            
-            {/* Group Information */}
+          
             <div className="group-section">
               <h3 className="group-section-title">Group Name</h3>
               
@@ -97,11 +124,19 @@ export default function EventConfirmationPage() {
                 </div>
               </div>
             </div>
-            
-            {/* Confirm Button */}
-            <button className="confirm-button">
+        
+            <button className="confirm-button" onClick={handleConfirm}>
               Confirm
             </button>
+          </div>
+       
+          <div className="event-nav-bottom-bar">
+            <EventNav 
+              totalSteps={6} 
+              currentStep={6} 
+              onStepChange={handleStepChange} 
+            />
+            <div className="event-nav-line"></div>
           </div>
         </div>
       </div>

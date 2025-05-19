@@ -1,13 +1,14 @@
 'use client';
 
 import React, { useState, useRef } from 'react';
-import Link from 'next/link';
-import ArrowButton from '../../components/arrowButton/ArrowButton';
+import { useRouter } from 'next/navigation'; // Import useRouter for programmatic navigation
 import { X, Plus, Search } from 'lucide-react';
+import EventNav from '../../components/eventNav/eventNav'; // Import the new EventNav component
 import '../events.css';
 import './invite.css';
 
 export default function EventInvitePage() {
+  const router = useRouter(); // Initialize the router for navigation
   const [showGroupsOverlay, setShowGroupsOverlay] = useState(false);
   const [showFriendsOverlay, setShowFriendsOverlay] = useState(false);
   const [selectedGroups, setSelectedGroups] = useState([]);
@@ -30,6 +31,33 @@ export default function EventInvitePage() {
     { id: 6, username: '@emnnem', profilePic: '/images/emnnem.png', color: '#D6D1EA' },
     { id: 7, username: '@njzzzzz', profilePic: '/images/njzzzzz.png', color: '#FFF3CF' },
   ];
+  
+  // Handle step changes in the EventNav
+  const handleStepChange = (step) => {
+    // Navigate based on the step
+    switch(step) {
+      case 1:
+        router.push('/events');
+        break;
+      case 2:
+        router.push('/events/time');
+        break;
+      case 3:
+        router.push('/events/rsvp');
+        break;
+      case 4:
+        router.push('/events/cover');
+        break;
+      case 5:
+        // Current page - no navigation needed
+        break;
+      case 6:
+        router.push('/events/confirm');
+        break;
+      default:
+        break;
+    }
+  };
 
   // Toggle overlay visibility
   const toggleOverlay = (type) => {
@@ -167,14 +195,17 @@ export default function EventInvitePage() {
             </div>
           </div>
           
-          <div className="event-nav">
-            <Link href='/events/cover'>
-              <ArrowButton direction="left" />
-            </Link>
-            <Link href="/events/confirm">
-              <ArrowButton direction="right" />
-            </Link>
-          </div>
+          {/* Replace the previous event-nav with the new EventNav component */}
+          {!showGroupsOverlay && !showFriendsOverlay && (
+            <div className="event-nav-bottom-bar">
+              <EventNav 
+                totalSteps={6} 
+                currentStep={5} // This is step 5 in the flow
+                onStepChange={handleStepChange} 
+              />
+              <div className="event-nav-line"></div>
+            </div>
+          )}
         </div>
 
         {/* Groups Overlay */}

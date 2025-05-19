@@ -2,20 +2,9 @@
 .confirmation-header {
   display: flex;
   align-items: left;
-  margin-bottom: 12px;
   position: relative;
 }
 
-.back-button {
-  color: #ccc;
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-}
 
 .confirmation-title {
   font-size: 32px;

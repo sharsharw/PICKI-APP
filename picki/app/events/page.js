@@ -1,14 +1,15 @@
-'use client'; // Mark this as a client-side component
+'use client';
 
 import { useState } from 'react';
-import Link from 'next/link'; // Import Link component for navigation
-import ArrowButton from '../components/arrowButton/ArrowButton';
-import TypeFilter from '../components/TypeFilter/TypeFilter';
+import { useRouter } from 'next/navigation'; 
 import { X } from 'lucide-react';
+import TypeFilter from '../components/TypeFilter/TypeFilter';
 import BudgetSlider from '../components/budgetSlider/budgetSlider';
+import EventNav from '../components/eventNav/eventNav'; 
 import './events.css';
 
 export default function EventPage() {
+  const router = useRouter(); 
   const [eventData, setEventData] = useState({
     name: '',
     budget: 25, // Default value for slider
@@ -38,6 +39,33 @@ export default function EventPage() {
         };
       }
     });
+  };
+
+ 
+  const handleStepChange = (step) => {
+   
+    switch(step) {
+      case 1:
+   
+        break;
+      case 2:
+        router.push('/events/time');
+        break;
+      case 3:
+        router.push('/events/rsvp');
+        break;
+      case 4:
+        router.push('/events/cover');
+        break;
+      case 5:
+        router.push('/events/invite');
+        break;
+      case 6:
+        router.push('/events/confirm');
+        break;
+      default:
+        break;
+    }
   };
 
   return (
@@ -110,11 +138,13 @@ export default function EventPage() {
             </div>
           </div>
 
-          <div className="event-nav">
-            <ArrowButton direction="left" onClick={() => window.history.back()} /> 
-            <Link href="/events/time">
-              <ArrowButton direction="right"/>
-            </Link>
+
+          <div className="event-nav-bottom-bar">
+            <EventNav 
+              totalSteps={6} 
+              currentStep={1} 
+              onStepChange={handleStepChange} 
+            />
           </div>
         </div>
       </div>
