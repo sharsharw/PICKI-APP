@@ -7,6 +7,14 @@ import EventNav from '../../components/eventNav/eventNav';
 import '../events.css';
 import './confirm.css';
 
+export default function ConfirmPage() {
+  const router = useRouter();
+
+  const handleConfirm = () => {
+    router.push('/TakeYourPick');
+  };
+}
+
 export default function EventConfirmationPage() {
   const router = useRouter(); 
   const eventData = {
