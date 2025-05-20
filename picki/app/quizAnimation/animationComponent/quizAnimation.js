@@ -36,4 +36,6 @@ const DropStackAnimation = () => {
   );
 };
 
+const QuizResult = () => {}
+
 export default DropStackAnimation;

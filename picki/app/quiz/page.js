@@ -84,6 +84,7 @@ export default function QuizInterface() {
   const handleNextClick = () => {
     if (currentPage === quizPages.length - 1) {
       setShowDropStack(true);
+      setTimeout(() => router.push('/results'), 2500);
     } else {
       setCurrentPage(currentPage + 1);
     }
