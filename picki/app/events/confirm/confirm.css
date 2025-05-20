@@ -1,0 +1,136 @@
+
+.confirmation-header {
+  display: flex;
+  align-items: left;
+  position: relative;
+}
+
+.confirmation-title {
+  font-size: 32px;
+  font-weight: bold;
+  color: #363636;
+  margin: 26px 0 9px 0;
+}
+
+.confirmation-content {
+  padding: 0 12px;
+}
+
+.confirmation-subtitle {
+  font-size: 14px;
+  color: #363636;
+  margin-bottom: 40px;
+}
+
+/* Event details section */
+.event-details {
+  margin-bottom: 32px;
+}
+
+.event-title {
+  font-size: 20px;
+  font-weight: 500;
+  color: #363636;
+  margin-bottom: 16px;
+}
+
+.event-info-row {
+  display: flex;
+  margin-bottom: 12px;
+}
+
+.event-info-label {
+  font-weight: bold;
+  color: #363636;
+  width: 140px;
+  font-size: 16px;
+}
+
+.event-info-value {
+  font-size: 16px;
+  color: #363636;
+}
+
+/* Group section */
+.group-section {
+  margin-bottom: 40px;
+}
+
+.group-section-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #363636;
+  margin-bottom: 16px;
+}
+
+.group-preview {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.group-image-container {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 15px;
+  margin-bottom: 20px;
+}
+
+.group-preview-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  display: block;
+}
+
+.group-preview-name {
+  padding: 10px 0;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  color: #391E99;
+}
+
+.group-members {
+  display: flex;
+  justify-content: center;
+  gap: 9px;
+}
+
+.member-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.member-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Confirm button */
+.confirm-button {
+  display: block;
+  width: 100%;
+  padding: 16px;
+  background-color: #363636;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 24px;
+  transition: background-color 0.2s;
+}
+
+.confirm-button:hover {
+  background-color: #222222;
+}
+
+.confirm-close-button {
+  padding-bottom: 0px;
+}

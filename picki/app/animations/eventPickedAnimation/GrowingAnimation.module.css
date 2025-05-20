@@ -1,0 +1,134 @@
+
+.animationContainer {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  max-width: 393px;
+  height: 100vh;
+  min-height: 812px;
+  background: #fdfaf4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+  border-radius: 24px; 
+}
+
+.guyWrapper {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  /* Place in a circle using trigonometry and CSS variables */
+  transform: 
+    translate(-50%, -50%)
+    rotate(calc(var(--i) * 90deg)) 
+    translate(100px) 
+    rotate(calc(var(--i) * -90deg))
+    scale(1);
+  z-index: 1;
+  transition: none;
+}
+
+.guy {
+  width: 100px;
+  height: 100px;
+  display: block;
+}
+
+
+.purpleGuy {
+  width: 90px;
+  height: 90px;
+}
+
+.yellowGuy {
+  width: 120px;
+  height: 120px;
+}
+
+.greenGuy {
+  width: 100px;
+  height: 100px;
+}
+
+
+/* Animation: only scale and opacity, not position */
+.guyWrapper.active {
+  animation: guyGrow 2s forwards;
+}
+
+/* Animation for pink: move to center and scale up */
+.guyWrapper.pink.active {
+  z-index: 4;
+  animation: pinkToCenterGrow 2.5s forwards;
+}
+
+.guyWrapper.green.active,
+.guyWrapper.yellow.active,
+.guyWrapper.purple.active {
+  animation: guyGrow 2s forwards, guyFade 1s 3s forwards;
+}
+
+/* Keyframes: only scale, keep position */
+@keyframes guyGrow {
+  0% {
+    transform: 
+      translate(-50%, -50%)
+      rotate(calc(var(--i) * 90deg)) 
+      translate(100px) 
+      rotate(calc(var(--i) * -90deg))
+      scale(1);
+  }
+  75% {
+    transform: 
+      translate(-50%, -50%)
+      rotate(calc(var(--i) * 90deg)) 
+      translate(100px) 
+      rotate(calc(var(--i) * -90deg))
+      scale(2);
+  }
+  100% {
+    transform: 
+      translate(-50%, -50%)
+      rotate(calc(var(--i) * 90deg)) 
+      translate(100px) 
+      rotate(calc(var(--i) * -90deg))
+      scale(2);
+  }
+}
+
+/* Keyframes for pink: move to center and scale up */
+@keyframes pinkToCenterGrow {
+  0% {
+    /* Start in the circle */
+    transform: 
+      translate(-50%, -50%)
+      rotate(calc(var(--i) * 90deg)) 
+      translate(100px) 
+      rotate(calc(var(--i) * -90deg))
+      scale(1);
+  }
+  75% {
+    /* Still in the circle, but growing */
+    transform: 
+      translate(-50%, -50%)
+      rotate(calc(var(--i) * 90deg)) 
+      translate(100px) 
+      rotate(calc(var(--i) * -90deg))
+      scale(2);
+  }
+  100% {
+    /* Move to center and scale up */
+    transform: 
+      translate(-50%, -50%)
+      scale(10);
+  }
+}
+
+@keyframes guyFade {
+  to { opacity: 0; }
+}
+
+

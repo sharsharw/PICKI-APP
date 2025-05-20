@@ -4,6 +4,11 @@ import '../quiz/quiz.css';
 import ArrowButton from '../components/arrowButton/ArrowButton';
 
 
+
+import { useRouter } from 'next/navigation';
+import DropStackAnimation from '../quizAnimation/animationComponent/quizAnimation';
+
+
 export default function QuizInterface() {
   const [currentPage, setCurrentPage] = useState(0);
   const [hoveredOption, setHoveredOption] = useState(null);
@@ -14,6 +19,9 @@ export default function QuizInterface() {
     3: null,
     4: null,
   });
+  const [showDropStack, setShowDropStack] = useState(false);
+
+  const router = useRouter();
 
   const quizPages = [
     {
@@ -74,7 +82,11 @@ export default function QuizInterface() {
   };
 
   const handleNextClick = () => {
-    if (currentPage < quizPages.length - 1) setCurrentPage(currentPage + 1);
+    if (currentPage === quizPages.length - 1) {
+      setShowDropStack(true);
+    } else {
+      setCurrentPage(currentPage + 1);
+    }
   };
 
   const handlePrevClick = () => {
@@ -118,11 +130,14 @@ export default function QuizInterface() {
             ))}
           </div>
 
-          <ArrowButton
-            direction="right"
-            onClick={handleNextClick}
-            disabled={currentPage === quizPages.length - 1}
-          />
+          {showDropStack ? (
+            <DropStackAnimation />
+          ) : (
+            <ArrowButton
+              direction="right"
+              onClick={handleNextClick}
+            />
+          )}
         </div>
       </div>
     </div>
