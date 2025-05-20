@@ -6,6 +6,8 @@ import { X } from 'lucide-react';
 import EventNav from '../../components/eventNav/eventNav'; 
 import '../events.css';
 import './confirm.css';
+import { useRouter } from 'next/navigation';
+import './TakeYourPick.css';
 
 export default function ConfirmPage() {
   const router = useRouter();
