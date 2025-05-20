@@ -2,9 +2,12 @@
 
 import React from 'react';
 import { ChevronLeft } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 import './TakeYourPick.css';
 
 export default function HostingPage() {
+  const router = useRouter();
+
   const handleBack = () => {
     window.history.back();
   };
@@ -22,7 +25,7 @@ export default function HostingPage() {
       address: '388 W Broadway, Vancouver, BC',
       pickedBy: 'Emma',
       image: '/images/sushi.png',
-      bgColor: '#FFF3CF', // light blue
+      bgColor: '#FFF3CF', // light yellow
     },
     {
       name: 'The Keg',
@@ -56,8 +59,7 @@ export default function HostingPage() {
           flexDirection: 'column',
           justifyContent: 'space-between',
         }}
-      >
-      </div>
+      ></div>
 
       {/* Avatars */}
       <div className="avatars-container">
@@ -74,7 +76,12 @@ export default function HostingPage() {
       </div>
 
       {/* CTA */}
-      <button className="pick-button">Take your pick!</button>
+      <button
+        className="pick-button"
+        onClick={() => router.push('/PickInput')}
+      >
+        Take your pick!
+      </button>
       <p className="deadline">Deadline April 2</p>
 
       {/* Help */}

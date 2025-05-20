@@ -9,17 +9,7 @@
     flex-direction: column;
   }
   
-  /* Back button */
-  .phone-frame::before {
-    content: "←";
-    position: absolute;
-    top: 24px;
-    left: 20px;
-    font-size: 24px;
-    font-weight: 300;
-    cursor: pointer;
-    color: black ;
-  }
+
   
   .page-title {
     font-size: 28px;
@@ -89,3 +79,18 @@
  .input-label {
     color: black;
  }
+ .back-arrow {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: none;
+    border: none;
+    border-radius: 50%;
+    padding: 6px;
+    cursor: pointer;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
