@@ -4,10 +4,10 @@ import React, { useEffect, useState } from "react";
 import styles from "./quizAnimation.module.css";
 
 const guys = [
-  { src: "/purpleGuy.svg", alt: "Purple Guy" },
-  { src: "/pinkGuy.svg", alt: "Pink Guy" },
-  { src: "/yellowGuy.svg", alt: "Yellow Guy" },
-  { src: "/greenGuy.svg", alt: "Green Guy" },
+  { src: "/Images/purpleGuy.svg", alt: "Purple Guy" },
+  { src: "/Images/pinkGuy.svg", alt: "Pink Guy" },
+  { src: "/Images/yellowGuy.svg", alt: "Yellow Guy" },
+  { src: "/Images/greenGuy.svg", alt: "Green Guy" },
 ];
 
 const DropStackAnimation = () => {
