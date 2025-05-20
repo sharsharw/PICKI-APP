@@ -2,7 +2,6 @@
 import { useState } from 'react';
 import '../quiz/quiz.css';
 import ArrowButton from '../components/arrowButton/ArrowButton';
-import GroupButton from '../components/arrowButton/GroupInviteButton/GroupInviteButton';
 
 
 export default function QuizInterface() {
@@ -84,7 +83,6 @@ export default function QuizInterface() {
 
   return (
     <div className="quiz-wrapper">
-      <GroupButton></GroupButton>
       <div className="quiz-container">
         <h2 className="quiz-title">{quizPages[currentPage].title}</h2>
 
