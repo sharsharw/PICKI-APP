@@ -1,0 +1,104 @@
+.groups-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #FFFAF1; /* or #f9f9f9 or whatever your site uses */
+  }
+.groups-page {
+    width: 393px;
+    background-color: #FFFAF1;
+    border-radius: 20px;
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+.group-card {
+    width: 356px;
+    height: 214px;
+    border-radius: 24px;
+    overflow: hidden;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+  }
+  .section-title {
+    color: #000;
+    font-size: 32px;
+    font-style: bold;
+    margin-bottom: 14px;
+    margin-top: 14px;
+  }
+  .group-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    object-position: 50% 10%;
+    border-top-left-radius: 18.5px;
+    border-top-right-radius: 18.5px;
+  }
+  
+  .group-name-container {
+    height: 64px;
+    background-color: #d1fae5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom-left-radius: 24px;
+    border-bottom-right-radius: 24px;
+  }
+  
+  .search-bar input {
+    flex: 1;
+    border: none;
+    background: black;
+    color: white;
+    font-size: 16px;
+    outline: none;
+  }
+  .search-bar {
+    width: 353px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    background-color: #000; /* dark background */
+    border-radius: 9999px;
+    padding: 0.75rem 1rem;
+    margin: 1rem auto; /* center it */
+    position: relative;
+  }
+  
+  .search-icon {
+    position: absolute;
+    right: 1rem;
+    color: #ccc;
+  }
+  
+  .group-featured {
+    margin: 24px 0;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .group-grid-small {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    justify-content: center;
+  }
+  .groups-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  background-color: white;
+}
+.new-group-btn {
+    width: 353px;
+    height: 51px;
+    margin-top: 20px;
+    font-size: 15px;
+    text-align: center;
+}
