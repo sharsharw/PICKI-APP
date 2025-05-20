@@ -2,8 +2,12 @@
 import { useState } from 'react';
 import '../quiz/quiz.css';
 import ArrowButton from '../components/arrowButton/ArrowButton';
+
+
+
 import { useRouter } from 'next/navigation';
 import DropStackAnimation from '../quizAnimation/animationComponent/quizAnimation';
+
 
 export default function QuizInterface() {
   const [currentPage, setCurrentPage] = useState(0);
