@@ -1,21 +1,22 @@
+
 import React from 'react';
 import './GroupInviteButton.css';
-import { ArrowRight } from 'lucide-react';
+import { ChevronRight } from 'lucide-react';
 
-const GroupButton = ({ groupName = "BobRossFans" }) => {
-    return (
-      <div className="group-button-container">
-        <div className="group-button">
-          <div className="button-content">
-            <p className="added-text">You've been added to:</p>
-            <h2 className="group-invire-name">{groupName}</h2>
-          </div>
-          <div className="arrow-container">
-            <ArrowRight color="white" size={32} strokeWidth={3} />
-          </div>
+const GroupButton = ({ onClick }) => {
+  return (
+    <div className="group-button-container">
+      <div className="group-button" onClick={onClick}>
+        <div className="text-container">
+          <p className="button-title">We picked for you!</p>
+          <p className="button-subtitle">Check out the plan</p>
+        </div>
+        <div className="arrow-container">
+          <ChevronRight color="white" size={24} />
         </div>
       </div>
-    );
-  };
-  
-  export default GroupButton;
+    </div>
+  );
+};
+
+export default GroupButton;

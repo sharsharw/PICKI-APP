@@ -1,0 +1,230 @@
+.event-planner-container {
+    max-width: 390px;
+    margin: 0 auto;
+    background-color: #FFFAF1;
+    color: #000000;
+    padding: 0 16px;
+    position: relative;
+  }
+  
+  /* Back Button */
+  .back-button {
+    position: absolute;
+    top: 20px;
+    left: 0px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #000;
+    z-index: 10;
+    margin-bottom: 40px;
+  }
+  
+  /* Header */
+  .header {
+    text-align: left;
+    padding-top: 60px;
+    margin-bottom: 20px;
+  }
+  
+  .title {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  /* Event Card */
+  .event-card {
+    border-radius: 12px;
+    margin-bottom: 16px;
+    height: 194px;
+    position: relative;
+  }
+  
+  .event-image {
+    height: 100%;
+    background-color: #2e2e2e;
+    background-image: url('/api/placeholder/350/160');
+    background-size: cover;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px;
+    color: white;
+  }
+  
+  .event-title {
+    font-size: 22px;
+    font-weight: bold;
+  }
+  
+  .event-date {
+    font-size: 14px;
+  }
+  
+  .date-month {
+    font-weight: bold;
+  }
+  
+  .date-day {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  /* Avatars */
+  .avatars-container {
+    display: flex;
+    margin: 20px 0;
+    gap: 12px;
+  }
+  
+  .avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+  
+  .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Event Type */
+  .event-type {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column; /* stack children vertically */
+    align-items: flex-start; /* align to the left */
+    gap: 8px; /* optional spacing between label and tag */
+  }
+  
+  .type-label {
+    font-size: 16px;
+    font-weight: 500;
+    margin: 0;
+    margin-bottom: 15px;
+  }
+  
+  .type-tag {
+    background-color: #ff75b5;
+    color: #391E99;
+    padding: 10px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 16px;
+    margin-bottom: 60px;
+
+  }
+  
+  
+  /* Button */
+  .pick-button {
+    width: 100%;
+    background-color: #391E99;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    padding: 15px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 10px;
+    margin-top: 60px;
+  }
+  
+  .deadline {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  /* Help Section */
+  .help-section {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 14px;
+  }
+  
+  .quiz-link {
+    color: #4834d4;
+    text-decoration: underline;
+  }
+  
+  /* Current Picks Section */
+  .current-picks-section {
+    margin-top: 30px;
+  }
+  
+  .picks-title {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    margin-top: 90px;
+  }
+  
+  .picks-subtitle {
+    font-size: 14px;
+    color: #666;
+    margin-top: 0;
+    margin-bottom: 20px;
+  }
+  
+  .picks-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 30px;
+  }
+  
+  .pick-card {
+    display: flex;
+    border-radius: 12px;
+    overflow: hidden;
+    padding: 12px;
+    background-color: #FFE0EE;
+  }
+  
+  .pick-image {
+    width: 70px;
+    height: 70px;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-right: 15px;
+    background-color: #ddd;
+  }
+  
+  .pick-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .pick-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .pick-person {
+    font-size: 12px;
+    color: #666;
+  }
+  
+  .pick-venue {
+    font-size: 16px;
+    font-weight: bold;
+    margin: 4px 0;
+  }
+  
+  .pick-address {
+    font-size: 12px;
+    color: #666;
+  }
+  .group-button-container {
+    margin-bottom: 20px;
+  }
