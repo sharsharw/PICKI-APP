@@ -1,0 +1,178 @@
+/* [project]/app/components/timePicker/timePicker.css [app-client] (css) */
+:root {
+  --time-primary-color: #391e99;
+  --time-text-color: #b1b1b1;
+  --time-label-color: #363636;
+  --time-border-color: #391e99;
+  --time-background: #fff;
+  --time-selected-color: #391e99;
+  --time-selected-text: #fff;
+  --time-hover-bg: #d6d1ea;
+  --time-border-radius: 13.5px;
+  --time-font-size: 16px;
+}
+
+.separated-time-picker {
+  width: 100%;
+  margin-bottom: 20px;
+  font-family: inter, sans-serif;
+  position: relative;
+}
+
+.time-label {
+  font-size: var(--time-font-size);
+  color: var(--time-label-color);
+  margin-top: 50px;
+  margin-bottom: 12px;
+  font-weight: 600;
+  display: block;
+}
+
+.time-display {
+  color: var(--time-primary-color);
+  text-align: center;
+  margin-bottom: 50px;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.time-selectors-container {
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 16px;
+  display: flex;
+}
+
+.time-selector {
+  max-width: 110px;
+  margin: 0 9px;
+  position: relative;
+}
+
+.time-selector-button {
+  background-color: var(--time-background);
+  border: 2px solid var(--time-border-color);
+  border-radius: var(--time-border-radius);
+  min-width: 80px;
+  color: var(--time-primary-color);
+  cursor: pointer;
+  justify-content: space-between;
+  align-items: center;
+  height: 48px;
+  padding: 12px 16px;
+  font-size: 16px;
+  font-weight: 500;
+  transition: all .2s;
+  display: flex;
+}
+
+.time-selector-button:focus {
+  border-color: var(--time-primary-color);
+  outline: none;
+  box-shadow: 0 0 0 2px #d6d1ea;
+}
+
+.time-separator {
+  color: var(--time-primary-color);
+  margin: 0 3px;
+  padding-bottom: 5px;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.ampm-selector .time-selector-button {
+  min-width: 70px;
+  max-width: 90px;
+}
+
+.dropdown-arrow {
+  color: #d6d1ea;
+  stroke-width: 3px;
+  width: 14px;
+  height: 14px;
+  transition: transform .2s;
+}
+
+.dropdown-arrow.open {
+  color: var(--time-primary-color);
+  transform: rotate(180deg);
+}
+
+.options-dropdown {
+  background-color: var(--time-background);
+  border: 2px solid var(--time-border-color);
+  border-radius: var(--time-border-radius);
+  z-index: 1000;
+  width: 100%;
+  max-height: 220px;
+  padding: 6px 6px 6px 0;
+  animation: .15s ease-out forwards simpleDropdown;
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  overflow-y: auto;
+}
+
+.minute-dropdown {
+  max-height: 220px;
+}
+
+.ampm-dropdown {
+  min-width: 70px;
+}
+
+@keyframes simpleDropdown {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.time-option {
+  color: var(--time-primary-color);
+  cursor: pointer;
+  text-align: center;
+  border-radius: 10px;
+  margin: 2px 5px;
+  padding: 10px 14px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color .15s;
+}
+
+.time-option:hover {
+  background-color: var(--time-hover-bg);
+}
+
+.time-option.selected {
+  background-color: var(--time-selected-color);
+  color: var(--time-selected-text);
+  font-weight: 700;
+}
+
+.options-dropdown::-webkit-scrollbar {
+  width: 6px;
+}
+
+.options-dropdown::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+  margin: 6px 0;
+}
+
+.options-dropdown::-webkit-scrollbar-thumb {
+  background: var(--time-primary-color);
+  background-clip: padding-box;
+  border-radius: 10px;
+}
+
+.options-dropdown::-webkit-scrollbar-thumb:hover {
+  background: #2e1878;
+}
+
+/*# sourceMappingURL=app_components_timePicker_timePicker_css_f9ee138c._.single.css.map*/

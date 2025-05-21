@@ -1,0 +1,20 @@
+/* [project]/app/components/arrowButton/ArrowButton.css [app-client] (css) */
+.nav-button {
+  cursor: pointer;
+  background-color: #000;
+  border-radius: 999px;
+  justify-content: center;
+  align-items: center;
+  width: 55px;
+  height: 55px;
+  padding: 12px;
+  display: flex;
+}
+
+.nav-button:disabled {
+  opacity: .3;
+  cursor: not-allowed;
+}
+
+
+/*# sourceMappingURL=app_components_arrowButton_ArrowButton_3592023e.css.map*/

@@ -1,0 +1,56 @@
+/* [project]/app/components/arrowButton/ArrowButton.css [app-client] (css) */
+.nav-button {
+  cursor: pointer;
+  background-color: #000;
+  border-radius: 999px;
+  justify-content: center;
+  align-items: center;
+  width: 55px;
+  height: 55px;
+  padding: 12px;
+  display: flex;
+}
+
+.nav-button:disabled {
+  opacity: .3;
+  cursor: not-allowed;
+}
+
+
+/* [project]/app/components/eventTimePicker/eventTimePicker.css [app-client] (css) */
+.time-picker {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.time-table {
+  text-align: center;
+  width: 100%;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table th, table td {
+  cursor: pointer;
+  padding: 10px;
+  font-size: 14px;
+}
+
+table td.selected {
+  color: #fff;
+  background-color: #391e99;
+  border-radius: 5px;
+}
+
+.event-time p {
+  text-align: center;
+  color: #391e99;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+
+/*# sourceMappingURL=app_components_7b383bc8._.css.map*/

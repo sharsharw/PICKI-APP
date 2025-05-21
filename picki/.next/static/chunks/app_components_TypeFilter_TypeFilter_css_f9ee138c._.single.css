@@ -1,0 +1,42 @@
+/* [project]/app/components/TypeFilter/TypeFilter.css [app-client] (css) */
+.filter-chip {
+  color: #fff;
+  cursor: pointer;
+  white-space: nowrap;
+  background-color: #363636;
+  border-radius: 28.5px;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 100%;
+  padding: 8px 10px;
+  font-family: Inter, sans-serif;
+  font-size: 14px;
+  font-weight: bold;
+  transition: background-color .2s, transform .1s;
+  display: inline-flex;
+}
+
+.filter-chip.selected {
+  color: #391e99;
+  background-color: #ffd147;
+}
+
+.filter-chip:active {
+  transform: scale(.98);
+}
+
+.plus-icon {
+  stroke-width: 3px;
+  size: 14px;
+  align-items: center;
+  margin-left: 3px;
+  transition: transform .3s;
+  display: flex;
+}
+
+.filter-chip.selected .plus-icon {
+  transform: rotate(45deg);
+}
+
+/*# sourceMappingURL=app_components_TypeFilter_TypeFilter_css_f9ee138c._.single.css.map*/

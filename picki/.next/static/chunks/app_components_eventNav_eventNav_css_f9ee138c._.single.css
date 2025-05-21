@@ -1,0 +1,68 @@
+/* [project]/app/components/eventNav/eventNav.css [app-client] (css) */
+.event-nav-container {
+  box-sizing: border-box;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 20px 15px;
+  display: flex;
+}
+
+.event-nav-button {
+  color: #fff;
+  cursor: pointer;
+  background-color: #363636;
+  border: none;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+  width: 55px;
+  height: 55px;
+  transition: background-color .2s;
+  display: flex;
+}
+
+.event-nav-button:hover {
+  background-color: #444;
+}
+
+.event-nav-button:disabled {
+  cursor: not-allowed;
+  opacity: .6;
+  background-color: #0000;
+}
+
+.event-nav-dots {
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  display: flex;
+}
+
+.event-nav-dot {
+  cursor: pointer;
+  background-color: #ccc;
+  border: none;
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  transition: background-color .2s, transform .2s;
+}
+
+.event-nav-dot.active {
+  background-color: #ff82bc;
+  transform: scale(1.2);
+}
+
+.event-nav-bottom-bar {
+  flex-direction: column;
+  align-items: center;
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/*# sourceMappingURL=app_components_eventNav_eventNav_css_f9ee138c._.single.css.map*/

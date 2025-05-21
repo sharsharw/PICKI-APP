@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 1, "column": 0}, "map": {"version":3,"sources":["turbopack:///[project]/app/components/TypeFilter/TypeFilter.css"],"sourcesContent":[".filter-chip {\n  background-color: #363636;\n  color: white;\n  border-radius: 28.5px;\n  padding:8px 10px;\n  font-size: 14px;\n  font-weight: bold;\n  font-family: 'Inter', sans-serif;\n  cursor: pointer;\n  display: inline-flex;\n  align-items: center;\n  justify-content: center;\n  gap: 5px;\n  width: 100%;\n  white-space: nowrap;\n  transition: background-color 0.2s ease, transform 0.1s ease;\n}\n\n.filter-chip.selected {\n  background-color: #FFD147;\n  color: #391E99;\n}\n\n.filter-chip:active {\n  transform: scale(0.98);\n}\n\n.plus-icon {\n  margin-left: 3px;\n  display: flex;\n  align-items: center;\n  stroke-width: 3px;\n  size: 14px;\n  transition: transform 0.3s ease;\n}\n\n.filter-chip.selected .plus-icon {\n    transform: rotate(45deg);\n}"],"names":[],"mappings":"AAAA;;;;;;;;;;;;;;;;;;AAkBA;;;;;AAKA;;;;AAIA;;;;;;;;;AASA"}}]
+}

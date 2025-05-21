@@ -1,0 +1,80 @@
+/* [project]/app/login/signUp/signUp.module.css [app-client] (css) */
+.signUp-module__CrvGIa__mobileFrame {
+  background: linear-gradient(#ff82bc 0%, #391e99 100%);
+  border-radius: 24px;
+  flex-direction: column;
+  align-items: center;
+  width: 393px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding-top: 24px;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.signUp-module__CrvGIa__heading {
+  color: #888;
+  align-self: flex-start;
+  margin-bottom: 8px;
+  margin-left: 16px;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.signUp-module__CrvGIa__mascot {
+  width: 200px;
+  height: 200px;
+  margin: 0 auto 32px;
+  display: block;
+}
+
+.signUp-module__CrvGIa__form {
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-top: 100px;
+  display: flex;
+}
+
+.signUp-module__CrvGIa__input {
+  color: #000;
+  background: #fff;
+  border: none;
+  border-radius: 24px;
+  width: 85%;
+  margin-bottom: 16px;
+  padding: 14px 18px;
+  font-size: 1rem;
+  box-shadow: 0 1px 4px #0000000a;
+}
+
+.signUp-module__CrvGIa__signUpButton {
+  color: #fff;
+  cursor: pointer;
+  background: #222;
+  border: none;
+  border-radius: 24px;
+  width: 85%;
+  margin-bottom: 16px;
+  padding: 14px 0;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.signUp-module__CrvGIa__switchText {
+  color: #000;
+  text-align: center;
+  margin-top: 8px;
+  font-size: .95rem;
+}
+
+.signUp-module__CrvGIa__signUpLink {
+  color: #ff82bc;
+  cursor: pointer;
+  margin-left: 4px;
+  font-weight: bold;
+}
+
+
+/*# sourceMappingURL=app_login_signUp_signUp_module_5abba28f.css.map*/

@@ -1,0 +1,69 @@
+/* [project]/app/components/budgetSlider/budgetSlider.css [app-client] (css) */
+.budget-slider-container {
+  margin: 15px 0;
+}
+
+.budget-slider-label {
+  color: #363636;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  display: block;
+}
+
+.budget-slider-wrapper {
+  margin-top: 50px;
+  padding: 20px 0;
+  position: relative;
+}
+
+.budget-tooltip {
+  color: #391e99;
+  white-space: nowrap;
+  background-color: #d6d1ea;
+  border-radius: 8px;
+  padding: 5px 12px;
+  font-size: 14px;
+  font-weight: 500;
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.budget-tooltip:after {
+  content: "";
+  border: 12px solid #0000;
+  border-top-color: #d6d1ea;
+  position: absolute;
+  bottom: -24px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.budget-track {
+  background-color: #e0d5ec;
+  border-radius: 13px;
+  width: 349px;
+  height: 11px;
+  position: relative;
+}
+
+.budget-thumb {
+  cursor: pointer;
+  background-color: #3b1c85;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+}
+
+.budget-range-labels {
+  color: #3b1c85;
+  justify-content: space-between;
+  margin-top: 15px;
+  font-size: 14px;
+  font-weight: 400;
+  display: flex;
+}
+
+/*# sourceMappingURL=app_components_budgetSlider_budgetSlider_css_f9ee138c._.single.css.map*/

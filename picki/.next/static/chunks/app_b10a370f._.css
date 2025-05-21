@@ -1,0 +1,116 @@
+/* [project]/app/components/arrowButton/ArrowButton.css [app-client] (css) */
+.nav-button {
+  cursor: pointer;
+  background-color: #000;
+  border-radius: 999px;
+  justify-content: center;
+  align-items: center;
+  width: 55px;
+  height: 55px;
+  padding: 12px;
+  display: flex;
+}
+
+.nav-button:disabled {
+  opacity: .3;
+  cursor: not-allowed;
+}
+
+
+/* [project]/app/login/onboarding/onboarding.module.css [app-client] (css) */
+.onboarding-module__tO6b7W__mobileFrame {
+  background: #fffaf1;
+  border-radius: 24px;
+  flex-direction: column;
+  align-items: center;
+  width: 393px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 0 0 24px;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.onboarding-module__tO6b7W__skip {
+  text-align: right;
+  width: 100%;
+  padding: 24px 24px 0 0;
+}
+
+.onboarding-module__tO6b7W__skipText {
+  color: #bbb;
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.onboarding-module__tO6b7W__content {
+  flex-direction: column;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.onboarding-module__tO6b7W__logo {
+  width: 250px;
+  margin: 10px 0 0;
+}
+
+.onboarding-module__tO6b7W__image {
+  width: 350px;
+  margin: 40px 0 24px;
+}
+
+.onboarding-module__tO6b7W__title {
+  text-align: center;
+  color: #000;
+  margin: 0 0 8px;
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.onboarding-module__tO6b7W__welcome {
+  color: #000;
+  text-align: center;
+  margin-top: 60px;
+  font-size: 1.3rem;
+}
+
+.onboarding-module__tO6b7W__description {
+  color: #000;
+  text-align: center;
+  margin: 0 40px 40px;
+  font-size: 1rem;
+}
+
+.onboarding-module__tO6b7W__dots {
+  justify-content: center;
+  margin: 12px 0;
+  display: flex;
+}
+
+.onboarding-module__tO6b7W__dot {
+  background: #eee;
+  border-radius: 50%;
+  width: 8px;
+  height: 8px;
+  margin: 0 4px;
+  display: inline-block;
+}
+
+.onboarding-module__tO6b7W__activeDot {
+  background: #ff82bc;
+}
+
+.onboarding-module__tO6b7W__arrows {
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 12px;
+  padding: 0 32px;
+  display: flex;
+}
+
+
+/*# sourceMappingURL=app_b10a370f._.css.map*/
