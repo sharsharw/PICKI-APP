@@ -1,1 +1,0 @@
-# PICKI-APP
