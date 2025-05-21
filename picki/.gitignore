@@ -39,3 +39,7 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Ignore package.json and package-lock.json in the PICKI-APP folder
+PICKI-APP/package.json
+PICKI-APP/package-lock.json
