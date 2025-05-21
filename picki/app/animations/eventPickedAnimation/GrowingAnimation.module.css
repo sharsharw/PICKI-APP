@@ -123,7 +123,7 @@
     /* Move to center and scale up */
     transform: 
       translate(-50%, -50%)
-      scale(10);
+      scale(12);
   }
 }
 

@@ -49,7 +49,13 @@ const locations = [
           />
         ))}
         <div className={styles.refreshQuiz}>
-          Don't like it? <span className={styles.purpleText}>Take the quiz again!</span>
+          Don't like it? <span
+            className={styles.purpleText}
+            onClick={() => router.push('/quiz')}
+            style={{ cursor: 'pointer' }}
+          >
+            Take the quiz again!
+          </span>
           <img src="/Images/refreshIcon.svg" alt="Refresh" className={styles.refreshIcon} />
         </div>
         <div className={styles.explorePage}>

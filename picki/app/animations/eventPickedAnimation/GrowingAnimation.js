@@ -3,6 +3,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import styles from "./GrowingAnimation.module.css";
+import { useRouter } from "next/navigation";
 
 const guys = [
   { src: "/Images/pinkGuy.svg", className: `${styles.pink}`, alt: "Pink Guy" },
@@ -14,6 +15,15 @@ const guys = [
 
 const GrowingAnimation = () => {
   const [active, setActive] = useState(false);
+  const router = useRouter();
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      router.push('/Pickedforyou/reveal');
+    }, 3300); // Replace 2500 with your animation duration in ms
+    return () => clearTimeout(timer);
+  }, [router]);
+
   useEffect(() => {
     const timer = setTimeout(() => setActive(true), 500);
     return () => clearTimeout(timer);
