@@ -1,0 +1,67 @@
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    /* No background here */
+  }
+
+.svg {
+  position: absolute;
+  left: 50%;
+  /* Start at the top of the frame */
+  top: 0;
+  transform: translate(-50%, 0) scale(0.1);
+  width: 80px;
+  height: 80px;
+  z-index: 1;
+  }
+  
+  .animate {
+    animation: drop-bounce-expand 3.5s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+  }
+  
+  @keyframes drop-bounce-expand {
+    0% {
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, 0) scale(0.1);
+      width: 80px;
+      height: 80px;
+    }
+    40% {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(1);
+      width: 80px;
+      height: 80px;
+    }
+    50% {
+      top: 45%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(1.1);
+    }
+    60% {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(1);
+    }
+    70% {
+      top: 48%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(1.05);
+    }
+    80% {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(1);
+    }
+    100% {
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(20); /* or whatever scale fills your frame */
+      width: 80px;
+      height: 80px;
+    }
+  }
