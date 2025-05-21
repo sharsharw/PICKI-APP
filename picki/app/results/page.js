@@ -30,7 +30,7 @@ const locations = [
   export default function ResultsPage() {
     const router = useRouter();
     const handleExit = () => {
-      router.push('/events/home');
+      router.push('/Pickedforyou');
     };
 
     return (
