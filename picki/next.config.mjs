@@ -1,8 +1,6 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
-
-export default nextConfig;
-
-module.exports = {
-    output: 'export'
+const nextConfig = {
+  output: 'export', 
+  basePath: '/PICKI-APP/picki', 
 };
+export default nextConfig;
