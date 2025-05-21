@@ -7,7 +7,7 @@ export default function LocationCard({ image, title, location, link, style }) {
       <img src={image} alt={title} className={styles.image} />
       <div className={styles.infoRow}>
         <img
-          src="/googleMaps.png"
+          src="/Images/googleMaps.png"
           alt="Google Maps"
           className={styles.mapsIcon}
         />

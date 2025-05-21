@@ -5,10 +5,10 @@ import Image from "next/image";
 import styles from "./GrowingAnimation.module.css";
 
 const guys = [
-  { src: "/pinkGuy.svg", className: `${styles.pink}`, alt: "Pink Guy" },
-  { src: "/greenGuy.svg", className: `${styles.green} ${styles.greenGuy}`, alt: "Green Guy" },
-  { src: "/yellowGuy.svg", className: `${styles.yellow} ${styles.yellowGuy}`, alt: "Yellow Guy" },
-  { src: "/purpleGuy.svg", className: `${styles.purple} ${styles.purpleGuy}`, alt: "Purple Guy" },
+  { src: "/Images/pinkGuy.svg", className: `${styles.pink}`, alt: "Pink Guy" },
+  { src: "/Images/greenGuy.svg", className: `${styles.green} ${styles.greenGuy}`, alt: "Green Guy" },
+  { src: "/Images/yellowGuy.svg", className: `${styles.yellow} ${styles.yellowGuy}`, alt: "Yellow Guy" },
+  { src: "/Images/purpleGuy.svg", className: `${styles.purple} ${styles.purpleGuy}`, alt: "Purple Guy" },
 ];
 
 
