@@ -86,7 +86,7 @@ export default function HostingPage() {
 
       
       <div className="help-section">
-        Need help? <a href="#" className="quiz-link">Take the quiz</a>
+        Need help? <a href="http://localhost:3000/quiz" className="quiz-link">Take the quiz</a>
       </div>
 
       
