@@ -46,7 +46,7 @@ export default function HostingPage() {
         </button>
         <h2 className="title">You're hosting</h2>
       </div>
-    <GroupButton></GroupButton>
+    <GroupButton onClick={() => router.push('/animations')}></GroupButton>
       {/* Event Card */}
       <div
         className="event-card"
